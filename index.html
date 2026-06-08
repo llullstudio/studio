@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>llUll Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0c0b09;
+      --surface:   #131210;
+      --border:    #2a2720;
+      --amber:     #c89244;
+      --amber-dim: #8a6530;
+      --text:      #d4cfc6;
+      --text-dim:  #7a7468;
+      --text-faint:#3d3a34;
+      --serif:     'EB Garamond', Georgia, serif;
+      --mono:      'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ────────────────────────────────────────────────── */
+    header {
+      padding: 4rem 4rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wordmark {
+      font-family: var(--mono);
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .wordmark span { color: var(--text-dim); }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text);
+      max-width: 640px;
+      margin-bottom: 1rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    /* ── SECTIONS ──────────────────────────────────────────────── */
+    main {
+      flex: 1;
+      padding: 0 4rem;
+    }
+
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── GRID ──────────────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    @media (max-width: 900px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* ── CARD ──────────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: border-color 0.15s;
+      text-decoration: none;
+    }
+
+    .card:hover { border-color: var(--amber-dim); }
+
+    a.card, a.card * { cursor: pointer; }
+
+    .card-num {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: var(--amber-dim);
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .card-domain {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+      margin-top: 0.4rem;
+      flex: 1;
+    }
+
+    .card-status {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid;
+      margin-top: 0.8rem;
+      align-self: flex-start;
+    }
+
+    .status-active { color: var(--amber); border-color: var(--amber-dim); }
+    .status-coming { color: var(--text-faint); border-color: var(--text-faint); }
+    .status-live   { color: #6aaa7a; border-color: #3d6b49; }
+
+    .card-link {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      margin-top: 0.4rem;
+    }
+
+    .card-link::after { content: ' →'; color: var(--amber-dim); }
+
+    /* ── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-about {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      max-width: 540px;
+      line-height: 1.55;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--amber); }
+
+    @media (max-width: 700px) {
+      header, main, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wordmark">ll<span>U</span>ll <span>/</span> Studio</div>
+    <h1>Instruments for <em>perception.</em></h1>
+    <p class="tagline">
+      A studio where analytical instruments are built, refined, and displayed.
+      The work is the instrument, not the opinion.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- Imprints -->
+    <section>
+      <div class="section-label">Imprints</div>
+      <div class="grid grid-3">
+
+        <a class="card" href="https://rllull.substack.com" target="_blank" rel="noopener">
+          <div class="card-num">I</div>
+          <div class="card-title">Cognitive Cellar</div>
+          <div class="card-domain">Analytical instruments · R. Llull</div>
+          <div class="card-desc">
+            Scored studies, dispositional profiling, and the Terroir methodology.
+            Applied to AI systems, ideological structures, institutions, and cultures.
+            The instrument doesn't care what you believe — it scores what you do.
+          </div>
+          <span class="card-status status-active">Active</span>
+          <span class="card-link">rllull.substack.com</span>
+        </a>
+
+        <div class="card">
+          <div class="card-num">II</div>
+          <div class="card-title">llUll press</div>
+          <div class="card-domain">Print publishing · AE Martinez</div>
+          <div class="card-desc">
+            Print-first imprint. Heritage projects, limited editions, posters.
+            The Lyon Building. Titles that reward slow reading and physical form.
+          </div>
+          <span class="card-status status-coming">Coming</span>
+        </div>
+
+        <div class="card">
+          <div class="card-num">III</div>
+          <div class="card-title">studio oi</div>
+          <div class="card-domain">Image · video · photography · design</div>
+          <div class="card-desc">
+            Still image, moving image, and creative experiments.
+            Visual research that runs parallel to the analytical work —
+            same precision, different register.
+          </div>
+          <span class="card-status status-coming">Coming</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Instruments -->
+    <section>
+      <div class="section-label">Instruments</div>
+      <div class="grid grid-2">
+
+        <div class="card">
+          <div class="card-num">Engine of Utopia</div>
+          <div class="card-title">Ideological Transmission Map</div>
+          <div class="card-domain">Revolutionary collectivist firmware · 14 nodes · 5 eras</div>
+          <div class="card-desc">
+            A scored transmission map tracing the same epistemic engine from
+            18th-century France through its modern instantiations. These are not
+            distinct ideologies. Same engine, different target variable.
+            The mass death is not the failure state.
+          </div>
+          <span class="card-status status-coming">In Development</span>
+        </div>
+
+        <a class="card" href="https://cognitivecellar.com" target="_blank" rel="noopener">
+          <div class="card-num">Kernl</div>
+          <div class="card-title">Cognitive Antivirus</div>
+          <div class="card-domain">Real-time epistemic threat detection</div>
+          <div class="card-desc">
+            Scans content for structural manipulation mechanisms and extracts
+            the factual payload after stripping them. Does not fact-check —
+            detects structural manipulation regardless of truth value.
+            Strictly neutral: fires on left, right, and center equally.
+          </div>
+          <span class="card-status status-active">Active Build</span>
+          <span class="card-link">cognitivecellar.com</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="footer-about">
+      R. Llull · St. Augustine, FL · The work is the justification.
+      Build the instruments, see who finds them.
+    </p>
+    <nav class="footer-links">
+      <a href="https://rllull.substack.com" target="_blank" rel="noopener">Substack</a>
+      <a href="https://cognitivecellar.com" target="_blank" rel="noopener">cognitivecellar.com</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
