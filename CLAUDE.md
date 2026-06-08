@@ -111,17 +111,31 @@ Dark academic. Precision instrument feel. No decoration that isn't load-bearing.
 
 ---
 
-## File Plan
+## Folder Structure
 
 ```
 llull.studio/
-  index.html          ← Lobby view (built, needs "Currently" block)
-  gallery.html        ← Gallery view (not started)
-  map.html            ← Map view — static first (not started)
-  CLAUDE.md           ← this file
+  CLAUDE.md               ← this file (Cowork session primer — stays at root)
+  .gitignore              ← blocks _project/ from GitHub/Vercel
+  index.html              ← Lobby (built)
+  gallery.html            ← Gallery (not started)
+  map.html                ← Map — static first (not started)
+  robots.txt              ← indexing suppressed until launch
+  _project/               ← never committed to git, never public
+    PLAN.md               ← build plan, phases, open decisions
+    FRAMEWORK.md          ← studio architecture, imprint structure
+    _ingest/              ← drop new material here (Grok/Perplexity/Gemini outputs, design refs, copy)
+      INTAKE_LOG.md       ← log of what came in and where it went
+    _processed/           ← absorbed and filed by type
+      design/             ← style decisions, design references, CD outputs
+      content/            ← catalog copy, article data, card text
+      research/           ← AI session transcripts, external research
+    _ref/                 ← permanent reference (pillar architecture, etc.)
 ```
 
-Single-file HTML per view. No build step. Commit → Vercel.
+**Pipeline:** Drop new material in `_ingest/` → Claude absorbs → moves to `_processed/<type>/` → logs in INTAKE_LOG.md.
+
+Single-file HTML per view. No build step. Commit web files → Vercel auto-deploys.
 
 ---
 

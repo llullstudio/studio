@@ -1,0 +1,5 @@
+# Project working files — never publish to GitHub/Vercel
+_project/
+
+# System
+.DS_Store
