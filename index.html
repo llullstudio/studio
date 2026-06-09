@@ -40,7 +40,12 @@
     header {
       padding: 4rem 4rem 3rem;
       border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
+
+    .header-left {}
 
     .wordmark {
       font-family: var(--grotesk);
@@ -79,6 +84,89 @@
       line-height: 1.6;
     }
 
+    /* ── HEADER NAV ────────────────────────────────────────────── */
+    .header-nav {
+      display: flex;
+      gap: 2.2rem;
+      padding-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    .header-nav a {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .header-nav a:hover:not(.coming) { color: var(--amber); }
+    .header-nav a.coming {
+      opacity: 0.3;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* ── CURRENTLY — the live wire ─────────────────────────────── */
+    /* Update manually when a new piece ships.                      */
+    .currently {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .currently-tag {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--amber);
+      white-space: nowrap;
+      padding-top: 0.35rem;
+      min-width: 5.5rem;
+    }
+
+    .currently-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+      display: block;
+      transition: color 0.15s;
+    }
+
+    .currently-title:hover { color: var(--amber); }
+
+    .currently-finding {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 0.9rem;
+      max-width: 560px;
+    }
+
+    .currently-meta {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-faint);
+      letter-spacing: 0.08em;
+    }
+
+    .currently-meta a {
+      color: var(--amber-dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .currently-meta a:hover { color: var(--amber); }
+
     /* ── SECTIONS ──────────────────────────────────────────────── */
     main {
       flex: 1;
@@ -103,11 +191,7 @@
     }
 
     /* ── GRID ──────────────────────────────────────────────────── */
-    .grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-
+    .grid { display: grid; gap: 1.5rem; }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
@@ -122,14 +206,14 @@
       padding: 1.6rem;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      transition: border-color 0.15s;
+      gap: 0.5rem;
+      transition: border-color 0.2s ease;
       text-decoration: none;
+      position: relative;
     }
 
     .card:hover { border-color: var(--amber-dim); }
-
-    a.card, a.card * { cursor: pointer; }
+    a.card { cursor: pointer; }
 
     .card-num {
       font-family: var(--mono);
@@ -155,11 +239,37 @@
       letter-spacing: 0.05em;
     }
 
+    /* GLASS TOP — always sharp, always visible */
+    .card-finding {
+      font-family: var(--serif);
+      font-size: 0.92rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.52;
+      margin-top: 0.25rem;
+    }
+
+    /* CARD BODY — behind the frost */
+    .card-body {
+      filter: blur(1.2px);
+      opacity: 0.42;
+      transition: filter 0.22s ease, opacity 0.22s ease;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .card:hover .card-body {
+      filter: blur(0px);
+      opacity: 1;
+    }
+
     .card-desc {
       font-size: 0.9rem;
       color: var(--text-dim);
       line-height: 1.55;
-      margin-top: 0.4rem;
       flex: 1;
     }
 
@@ -172,13 +282,14 @@
       text-transform: uppercase;
       padding: 0.25rem 0.55rem;
       border: 1px solid;
-      margin-top: 0.8rem;
+      margin-top: 0.4rem;
       align-self: flex-start;
     }
 
-    .status-active { color: var(--amber); border-color: var(--amber-dim); }
+    .status-active { color: var(--amber);      border-color: var(--amber-dim); }
     .status-coming { color: var(--text-faint); border-color: var(--text-faint); }
-    .status-live   { color: #6aaa7a; border-color: #3d6b49; }
+    .status-live   { color: #6aaa7a;           border-color: #3d6b49; }
+    .status-dev    { color: var(--amber-dim);  border-color: var(--text-faint); }
 
     .card-link {
       font-family: var(--mono);
@@ -186,7 +297,6 @@
       color: var(--text-dim);
       text-decoration: none;
       letter-spacing: 0.05em;
-      margin-top: 0.4rem;
     }
 
     .card-link::after { content: ' →'; color: var(--amber-dim); }
@@ -221,28 +331,52 @@
       text-transform: uppercase;
       color: var(--text-dim);
       text-decoration: none;
+      transition: color 0.15s;
     }
 
     .footer-links a:hover { color: var(--amber); }
 
     @media (max-width: 700px) {
+      header { flex-direction: column; gap: 2rem; }
       header, main, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
       h1 { font-size: 2rem; }
+      .currently { flex-direction: column; gap: 0.8rem; }
+      .header-nav { gap: 1.4rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="wordmark">llUll <span class="wordmark-studio">studio</span></div>
-    <h1>Instruments for <em>clarity.</em></h1>
-    <p class="tagline">
-      A studio where analytical instruments are built, refined, and displayed.
-      The work is the instrument, not the opinion.
-    </p>
+    <div class="header-left">
+      <div class="wordmark">llUll <span class="wordmark-studio">studio</span></div>
+      <h1>Instruments for <em>clarity.</em></h1>
+      <p class="tagline">The work is the instrument, not the opinion.</p>
+    </div>
+    <nav class="header-nav">
+      <a href="gallery.html" class="coming">Gallery</a>
+      <a href="map.html" class="coming">Map</a>
+      <a href="https://rllull.substack.com" target="_blank" rel="noopener">Substack</a>
+    </nav>
   </header>
 
   <main>
+
+    <!-- CURRENTLY — update manually when a new piece ships -->
+    <section>
+      <div class="currently">
+        <span class="currently-tag">Currently</span>
+        <div>
+          <a class="currently-title" href="https://rllull.substack.com/p/the-cuckoo-protocol" target="_blank" rel="noopener">The Cuckoo Protocol</a>
+          <p class="currently-finding">
+            How franchises eat their own mythic core — and teach the audience not to trust the uniform.
+          </p>
+          <p class="currently-meta">
+            Study 02 · Cognitive Cellar · <a href="https://rllull.substack.com/p/the-cuckoo-protocol" target="_blank" rel="noopener">rllull.substack.com →</a>
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- Imprints -->
     <section>
@@ -253,36 +387,43 @@
           <div class="card-num">I</div>
           <div class="card-title">Cognitive Cellar</div>
           <div class="card-domain">Analytical instruments · R. Llull</div>
-          <div class="card-desc">
-            Scored studies, dispositional profiling, and the Terroir methodology.
-            Applied to AI systems, ideological structures, institutions, and cultures.
-            The instrument doesn't care what you believe — it scores what you do.
+          <p class="card-finding">The instrument doesn't care what you believe. It scores what you do.</p>
+          <div class="card-body">
+            <p class="card-desc">
+              Scored studies, dispositional profiling, and the Terroir methodology.
+              Applied to AI systems, ideological structures, institutions, and cultures.
+            </p>
+            <span class="card-status status-active">Active</span>
+            <span class="card-link">rllull.substack.com</span>
           </div>
-          <span class="card-status status-active">Active</span>
-          <span class="card-link">rllull.substack.com</span>
         </a>
 
         <div class="card">
           <div class="card-num">II</div>
           <div class="card-title">llUll press</div>
           <div class="card-domain">Print publishing</div>
-          <div class="card-desc">
-            Print-first imprint. Heritage projects, limited editions, posters.
-            The Lyon Building. Titles that reward slow reading and physical form.
+          <p class="card-finding">Titles that reward slow reading and physical form.</p>
+          <div class="card-body">
+            <p class="card-desc">
+              Print-first imprint. Heritage projects, limited editions, posters.
+              The Lyon Building. Books that require the object.
+            </p>
+            <span class="card-status status-coming">Coming</span>
           </div>
-          <span class="card-status status-coming">Coming</span>
         </div>
 
         <div class="card">
           <div class="card-num">III</div>
           <div class="card-title">studio oi</div>
           <div class="card-domain">Image · video · photography · design</div>
-          <div class="card-desc">
-            Still image, moving image, and creative experiments.
-            Visual research that runs parallel to the analytical work —
-            same precision, different register.
+          <p class="card-finding">Same precision, different register.</p>
+          <div class="card-body">
+            <p class="card-desc">
+              Still image, moving image, and creative experiments.
+              Visual research running parallel to the analytical work.
+            </p>
+            <span class="card-status status-coming">Coming</span>
           </div>
-          <span class="card-status status-coming">Coming</span>
         </div>
 
       </div>
@@ -297,28 +438,62 @@
           <div class="card-num">Engine of Utopia</div>
           <div class="card-title">Ideological Transmission Map</div>
           <div class="card-domain">Revolutionary collectivist firmware · 14 nodes · 5 eras</div>
-          <div class="card-desc">
-            A scored transmission map tracing the same epistemic engine from
-            18th-century France through its modern instantiations. These are not
-            distinct ideologies. Same engine, different target variable.
-            The mass death is not the failure state.
+          <p class="card-finding">The mass death is not the failure state.</p>
+          <div class="card-body">
+            <p class="card-desc">
+              A scored transmission map tracing the same epistemic engine from
+              18th-century France through its modern instantiations.
+              These are not distinct ideologies. Same engine, different target variable.
+            </p>
+            <span class="card-status status-dev">In Development</span>
           </div>
-          <span class="card-status status-coming">In Development</span>
         </div>
 
         <a class="card" href="https://cognitivecellar.com" target="_blank" rel="noopener">
           <div class="card-num">Kernl</div>
           <div class="card-title">Cognitive Antivirus</div>
           <div class="card-domain">Real-time epistemic threat detection</div>
-          <div class="card-desc">
-            Scans content for structural manipulation mechanisms and extracts
-            the factual payload after stripping them. Does not fact-check —
-            detects structural manipulation regardless of truth value.
-            Strictly neutral: fires on left, right, and center equally.
+          <p class="card-finding">Detects structural manipulation regardless of truth value.</p>
+          <div class="card-body">
+            <p class="card-desc">
+              Scans content for structural manipulation mechanisms and extracts
+              the factual payload. Does not fact-check.
+              Strictly neutral: fires on left, right, and center equally.
+            </p>
+            <span class="card-status status-active">Active Build</span>
+            <span class="card-link">cognitivecellar.com</span>
           </div>
-          <span class="card-status status-active">Active Build</span>
-          <span class="card-link">cognitivecellar.com</span>
         </a>
+
+        <div class="card">
+          <div class="card-num">The Last Backup</div>
+          <div class="card-title">High-Fidelity Cognitive Encoding</div>
+          <div class="card-domain">Framework · Three-axis architecture · HAL Stack</div>
+          <p class="card-finding">Between the chatbot that sounds like your father and the connectome upload that <em>is</em> your father lies unexplored middle ground.</p>
+          <div class="card-body">
+            <p class="card-desc">
+              A modular encoding system for the generative machinery of a mind —
+              not what someone says, but how the cognition that produces the speech works.
+              Security A/B/C · HAL Stack 0–6 · Fidelity axis.
+            </p>
+            <span class="card-status status-dev">In Development</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-num">The Collector</div>
+          <div class="card-title">Dispositional Knowledge Filter</div>
+          <div class="card-domain">Personal knowledge acquisition · Validation-gated</div>
+          <p class="card-finding">The bottleneck being solved is saving too much, not finding too little.</p>
+          <div class="card-body">
+            <p class="card-desc">
+              A validation-gated knowledge ingestion system. Most captures are discarded.
+              User-authored dispositional axes score what survives.
+              The judge runs locally; the corpus lives anywhere.
+            </p>
+            <span class="card-status status-coming">Coming</span>
+          </div>
+        </div>
 
       </div>
     </section>
@@ -327,8 +502,7 @@
 
   <footer>
     <p class="footer-about">
-      R. Llull · St. Augustine, FL · The work is the justification.
-      Build the instruments, see who finds them.
+      R. Llull · St. Augustine, FL · Build the instruments, see who finds them.
     </p>
     <nav class="footer-links">
       <a href="https://rllull.substack.com" target="_blank" rel="noopener">Substack</a>
