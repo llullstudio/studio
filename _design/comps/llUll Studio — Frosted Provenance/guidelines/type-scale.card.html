@@ -1,0 +1,62 @@
+<!-- @dsCard group="Type" viewport="700x380" name="Type Scale" subtitle="Full size scale with tokens" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.2rem 2rem; margin: 0; }
+    .row {
+      display: flex; align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-dim);
+      padding: 0.4rem 0;
+    }
+    .row:last-child { border-bottom: none; }
+    .sample { font-family: var(--font-serif); color: var(--text); line-height: 1; }
+    .token { font-family: var(--font-mono); font-size: 0.55rem; letter-spacing: 0.08em; color: var(--text-faint); white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-5xl)">Clarity</span>
+    <span class="token">--text-5xl · 2.6rem · h1</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-4xl)">Instruments</span>
+    <span class="token">--text-4xl · 2rem · h1 mobile</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-3xl);font-style:italic;color:var(--amber)">The Cuckoo Protocol</span>
+    <span class="token">--text-3xl · 1.35rem · currently</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-2xl)">Cognitive Cellar</span>
+    <span class="token">--text-2xl · 1.25rem · card title</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-xl)">llUll studio</span>
+    <span class="token">--text-xl · 1.1rem · wordmark</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-lg);color:var(--text-dim)">The work is the instrument, not the opinion.</span>
+    <span class="token">--text-lg · 1.05rem · tagline</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-md)">Analytical instruments · R. Llull</span>
+    <span class="token">--text-md · 1rem · base</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-base);color:var(--text-dim)">Scored studies, dispositional profiling, and the Terroir methodology.</span>
+    <span class="token">--text-base · 0.9rem · body</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-sm);font-family:var(--font-mono);letter-spacing:0.12em;text-transform:uppercase;color:var(--text-faint)">IMPRINTS</span>
+    <span class="token">--text-sm · 0.65rem · section label</span>
+  </div>
+  <div class="row">
+    <span class="sample" style="font-size:var(--text-xs);font-family:var(--font-mono);letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber-dim);padding:0.2rem 0.45rem;">Active</span>
+    <span class="token">--text-xs · 0.58rem · badge</span>
+  </div>
+</body>
+</html>

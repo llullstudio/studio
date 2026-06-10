@@ -1,0 +1,41 @@
+/* llUll Studio — Color Tokens */
+
+:root {
+  /* ── Base Surfaces ─────────────────────────────────────────────── */
+  --bg:           #0c0b09;   /* Page base — near-black, warm undertone */
+  --surface:      #131210;   /* Card / elevated surface */
+  --surface-2:    #1a1915;   /* Double-elevated (nested panel) */
+  --border:       #2a2720;   /* Default border */
+  --border-dim:   #1e1c19;   /* Subtle divider */
+
+  /* ── Amber Accent ──────────────────────────────────────────────── */
+  --amber:        #c89244;   /* Primary accent — wordmark, hover, em text */
+  --amber-dim:    #8a6530;   /* Secondary accent — hover borders, arrows */
+  --amber-faint:  #3d2e18;   /* Faint amber fill (button hover) */
+
+  /* ── Text Hierarchy ────────────────────────────────────────────── */
+  --text:         #d4cfc6;   /* Primary — warm off-white */
+  --text-dim:     #7a7468;   /* Secondary — descriptions, metadata */
+  --text-faint:   #3d3a34;   /* Tertiary — section labels */
+
+  /* ── Status (fg = text, bd = border) ───────────────────────────── */
+  --status-active-fg: #c89244;   /* Active */
+  --status-active-bd: #8a6530;
+  --status-live-fg:   #6aaa7a;   /* Live / Published */
+  --status-live-bd:   #3d6b49;
+  --status-dev-fg:    #8a6530;   /* In Development */
+  --status-dev-bd:    #3d3a34;
+  --status-coming-fg: #3d3a34;   /* Coming */
+  --status-coming-bd: #3d3a34;
+
+  /* ── Semantic Aliases ──────────────────────────────────────────── */
+  --surface-page:      var(--bg);
+  --surface-card:      var(--surface);
+  --text-body:         var(--text);
+  --text-secondary:    var(--text-dim);
+  --text-label:        var(--text-faint);
+  --accent:            var(--amber);
+  --link:              var(--amber);
+  --border-card:       var(--border);
+  --border-card-hover: var(--amber-dim);
+}

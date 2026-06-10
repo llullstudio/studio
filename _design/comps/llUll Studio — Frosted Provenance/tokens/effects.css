@@ -1,0 +1,19 @@
+/* llUll Studio — Effects: motion, shadows, frost */
+
+:root {
+  /* ── Motion ────────────────────────────────────────────────────── */
+  --ease: cubic-bezier(0.25, 0.6, 0.3, 1); /* @kind other */
+  --duration-fast: 150ms; /* @kind other */
+  --duration-base: 250ms; /* @kind other */
+
+  /* ── Frost (the signature reveal) ──────────────────────────────── */
+  --frost-blur: 1.2px; /* @kind other */
+  --frost-opacity: 0.42; /* @kind other */
+
+  /* ── Shadows (rare — borders carry elevation) ──────────────────── */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lift: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  /* ── Focus ─────────────────────────────────────────────────────── */
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--amber-dim); /* @kind shadow */
+}

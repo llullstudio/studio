@@ -1,0 +1,53 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Amber Accent" subtitle="Primary accent palette — wordmark, hover, links" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.5rem; margin: 0; }
+    .row { display: flex; gap: 1rem; }
+    .swatch {
+      flex: 1; height: 64px;
+      border: 1px solid var(--border);
+    }
+    .meta {
+      margin-top: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+    }
+    .name { color: var(--text-dim); display: block; }
+    .hex  { color: var(--text-faint); display: block; margin-top: 0.15rem; }
+    .use  { color: var(--text-faint); display: block; margin-top: 0.15rem; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <div class="swatch" style="background:var(--amber);"></div>
+      <div class="meta">
+        <span class="name">--amber</span>
+        <span class="hex">#c89244</span>
+        <span class="use">Wordmark, hover, primary link</span>
+      </div>
+    </div>
+    <div>
+      <div class="swatch" style="background:var(--amber-dim);"></div>
+      <div class="meta">
+        <span class="name">--amber-dim</span>
+        <span class="hex">#8a6530</span>
+        <span class="use">Hover border, card-num, card-link arrow</span>
+      </div>
+    </div>
+    <div>
+      <div class="swatch" style="background:var(--amber-faint);"></div>
+      <div class="meta">
+        <span class="name">--amber-faint</span>
+        <span class="hex">#3d2e18</span>
+        <span class="use">Button hover background wash</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- @dsCard group="Spacing" viewport="700x280" name="Spacing Tokens" subtitle="Base scale — 4px unit" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.5rem 2rem; margin: 0; }
+    .stack { display: flex; flex-direction: column; gap: 0.35rem; }
+    .row { display: flex; align-items: center; gap: 0.75rem; }
+    .bar { background: var(--amber-faint); border-left: 2px solid var(--amber-dim); height: 12px; flex-shrink: 0; }
+    .token { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.08em; color: var(--text-faint); width: 6rem; }
+    .val   { font-family: var(--font-mono); font-size: 0.56rem; color: var(--text-faint); width: 3rem; }
+    .px    { font-family: var(--font-mono); font-size: 0.56rem; color: var(--border); }
+  </style>
+</head>
+<body>
+  <div class="stack">
+    <div class="row"><span class="token">--space-1</span><div class="bar" style="width:var(--space-1);"></div><span class="val">0.25rem</span><span class="px">4px</span></div>
+    <div class="row"><span class="token">--space-2</span><div class="bar" style="width:var(--space-2);"></div><span class="val">0.5rem</span><span class="px">8px</span></div>
+    <div class="row"><span class="token">--space-3</span><div class="bar" style="width:var(--space-3);"></div><span class="val">0.75rem</span><span class="px">12px</span></div>
+    <div class="row"><span class="token">--space-4</span><div class="bar" style="width:var(--space-4);"></div><span class="val">1rem</span><span class="px">16px</span></div>
+    <div class="row"><span class="token">--space-5</span><div class="bar" style="width:var(--space-5);"></div><span class="val">1.25rem</span><span class="px">20px</span></div>
+    <div class="row"><span class="token">--space-6</span><div class="bar" style="width:var(--space-6);"></div><span class="val">1.5rem</span><span class="px">24px</span></div>
+    <div class="row"><span class="token">--space-8</span><div class="bar" style="width:var(--space-8);"></div><span class="val">2rem</span><span class="px">32px</span></div>
+    <div class="row"><span class="token">--space-10</span><div class="bar" style="width:var(--space-10);"></div><span class="val">2.5rem</span><span class="px">40px</span></div>
+    <div class="row"><span class="token">--space-12</span><div class="bar" style="width:var(--space-12);"></div><span class="val">3rem</span><span class="px">48px</span></div>
+    <div class="row"><span class="token">--space-16</span><div class="bar" style="width:var(--space-16);"></div><span class="val">4rem</span><span class="px">64px · --page-padding</span></div>
+  </div>
+</body>
+</html>

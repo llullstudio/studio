@@ -1,0 +1,44 @@
+/* llUll Studio — Typography Tokens
+ * EB Garamond for prose & headings; JetBrains Mono for labels/metadata;
+ * Space Grotesk strictly for the wordmark.
+ * Scale matches llull.studio production values.
+ */
+
+:root {
+  /* ── Families ──────────────────────────────────────────────────── */
+  --font-serif:   'EB Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-mono:    'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+  --font-grotesk: 'Space Grotesk', 'Archivo', system-ui, sans-serif;
+
+  /* ── Scale (production values from llull.studio) ───────────────── */
+  --text-xs:   0.58rem;  /* badges, currently-tag, meta */
+  --text-sm:   0.65rem;  /* section labels, card links, nav */
+  --text-base: 0.9rem;   /* card body text */
+  --text-md:   1rem;     /* card finding, currently finding */
+  --text-lg:   1.05rem;  /* tagline */
+  --text-xl:   1.1rem;   /* wordmark */
+  --text-2xl:  1.25rem;  /* card title */
+  --text-3xl:  1.35rem;  /* currently title */
+  --text-4xl:  2rem;     /* h1 mobile */
+  --text-5xl:  2.6rem;   /* h1 desktop */
+
+  /* ── Weights ───────────────────────────────────────────────────── */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;  /* wordmark only */
+
+  /* ── Leading & Tracking ────────────────────────────────────────── */
+  --leading-tight: 1.2;    /* h1 */
+  --leading-snug:  1.3;    /* card titles */
+  --leading-body:  1.6;    /* serif prose */
+  --tracking-mono:     0.08em;  /* mono metadata */
+  --tracking-label:    0.2em;   /* section labels */
+  --tracking-nav:      0.18em;  /* header nav */
+  --tracking-wordmark: 0.12em;  /* wordmark */
+
+  /* ── Semantic Aliases ──────────────────────────────────────────── */
+  --font-body:     var(--font-serif);
+  --font-heading:  var(--font-serif);
+  --font-label:    var(--font-mono);
+  --font-wordmark: var(--font-grotesk);
+}

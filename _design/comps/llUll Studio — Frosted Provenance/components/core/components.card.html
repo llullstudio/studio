@@ -1,0 +1,112 @@
+<!-- @dsCard group="Components" viewport="700x640" name="Core Components" subtitle="Card · Button · Badge · Tag · SectionLabel · Wordmark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <style>
+    body { background: var(--bg); padding: 1.5rem; color: var(--text); }
+    .row { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.4rem; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .lbl {
+      font-family: var(--font-mono); font-size: 0.58rem;
+      letter-spacing: 0.2em; color: var(--text-faint);
+      text-transform: uppercase; display: block; margin-bottom: 0.5rem;
+    }
+    .block { margin-bottom: 1.4rem; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { Card, CardDesc, CardLink, Button, Badge, SectionLabel, Tag, Wordmark } =
+      window.LlUllStudioFrostedProvenance_e6bb14;
+
+    function Demo() {
+      return (
+        <div>
+          <div className="block">
+            <span className="lbl">Wordmark</span>
+            <div className="row">
+              <Wordmark size="sm" />
+              <Wordmark size="md" />
+              <Wordmark size="lg" />
+              <Wordmark suffix="press" size="md" />
+              <Wordmark suffix={false} size="md" />
+            </div>
+          </div>
+
+          <div className="block">
+            <span className="lbl">Button</span>
+            <div className="row">
+              <Button>View Gallery</Button>
+              <Button variant="amber">Read on Substack</Button>
+              <Button variant="ghost">Map</Button>
+              <Button size="sm">Small</Button>
+              <Button disabled>Disabled</Button>
+            </div>
+          </div>
+
+          <div className="block">
+            <span className="lbl">Badge</span>
+            <div className="row">
+              <Badge variant="active">Active</Badge>
+              <Badge variant="live">Published</Badge>
+              <Badge variant="dev">In Development</Badge>
+              <Badge variant="coming">Coming</Badge>
+              <Badge>Instrument</Badge>
+            </div>
+          </div>
+
+          <div className="block">
+            <span className="lbl">SectionLabel · Tag</span>
+            <div className="row" style={{ alignItems: 'flex-start', flexDirection: 'column', gap: '0.6rem' }}>
+              <SectionLabel>Imprints</SectionLabel>
+              <div className="row" style={{ margin: 0 }}>
+                <Tag>Cognitive Cellar</Tag>
+                <Tag>Article</Tag>
+                <Tag variant="amber">Study 02</Tag>
+                <Tag variant="amber">Instrument</Tag>
+              </div>
+            </div>
+          </div>
+
+          <div className="block">
+            <span className="lbl">Card — hover to reveal body</span>
+            <div className="grid2">
+              <Card
+                num="I"
+                title="Cognitive Cellar"
+                domain="Analytical instruments · R. Llull"
+                finding="The instrument doesn't care what you believe. It scores what you do."
+                href="#"
+                external={false}
+              >
+                <CardDesc>Scored studies, dispositional profiling, and the Terroir methodology.</CardDesc>
+                <Badge variant="active">Active</Badge>
+                <CardLink>rllull.substack.com</CardLink>
+              </Card>
+              <Card
+                num="Kernl"
+                title="Cognitive Antivirus"
+                domain="Real-time epistemic threat detection"
+                finding="Detects structural manipulation regardless of truth value."
+              >
+                <CardDesc>Scans for structural manipulation. Does not fact-check. Strictly neutral.</CardDesc>
+                <Badge variant="dev">In Development</Badge>
+              </Card>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+  </script>
+</body>
+</html>

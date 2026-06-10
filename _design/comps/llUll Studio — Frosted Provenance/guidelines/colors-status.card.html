@@ -1,0 +1,31 @@
+<!-- @dsCard group="Colors" viewport="700x120" name="Status Colors" subtitle="Active, Live, Dev, Coming" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.5rem; margin: 0; }
+    .row { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+    .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <span class="badge" style="color:var(--status-active-fg);border-color:var(--status-active-bd);">Active</span>
+    <span class="badge" style="color:var(--status-live-fg);border-color:var(--status-live-bd);">Published</span>
+    <span class="badge" style="color:var(--status-dev-fg);border-color:var(--status-dev-bd);">In Development</span>
+    <span class="badge" style="color:var(--status-coming-fg);border-color:var(--status-coming-bd);">Coming</span>
+    <span class="badge" style="color:var(--text-dim);border-color:var(--border);">Instrument</span>
+  </div>
+</body>
+</html>

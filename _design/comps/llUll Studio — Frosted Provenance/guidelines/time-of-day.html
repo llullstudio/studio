@@ -1,0 +1,127 @@
+<!-- @dsCard group="Brand" viewport="1280x820" name="Time of Day" subtitle="Morning · Dusk · Night — amber shifts with the light" -->
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time of Day — llUll Studio</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { margin: 0; min-height: 100vh; background: var(--bg); color: var(--text); }
+
+    /* Theme-switch transitions — activated by .theme-anim on <html> */
+    .theme-anim body,
+    .theme-anim header,
+    .theme-anim main,
+    .theme-anim section,
+    .theme-anim div,
+    .theme-anim p,
+    .theme-anim h1,
+    .theme-anim h2,
+    .theme-anim a,
+    .theme-anim span,
+    .theme-anim em,
+    .theme-anim button,
+    .theme-anim nav {
+      transition:
+        background-color 0.5s cubic-bezier(0.25,0.6,0.3,1),
+        border-color     0.45s cubic-bezier(0.25,0.6,0.3,1),
+        color            0.45s cubic-bezier(0.25,0.6,0.3,1),
+        box-shadow       0.45s cubic-bezier(0.25,0.6,0.3,1) !important;
+    }
+    /* Never clobber the frost-reveal hover transition */
+    .llull-card-body {
+      transition: filter 0.22s ease, opacity 0.22s ease !important;
+    }
+
+    /* Ambient time label — fixed bottom-centre */
+    .time-label {
+      position: fixed;
+      bottom: 1.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      pointer-events: none;
+      z-index: 5;
+      transition: color 0.5s ease, opacity 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="../tweaks-panel.jsx"></script>
+  <script src="../_ds_bundle.js"></script>
+  <script>window.DS = window.LlUllStudioFrostedProvenance_e6bb14;</script>
+  <script type="text/babel" src="../ui_kits/studio_website/Header.jsx"></script>
+  <script type="text/babel" src="../ui_kits/studio_website/LobbyView.jsx"></script>
+  <script type="text/babel" src="../ui_kits/studio_website/GalleryView.jsx"></script>
+  <script type="text/babel" src="../ui_kits/studio_website/MapView.jsx"></script>
+  <script type="text/babel" src="../ui_kits/studio_website/Footer.jsx"></script>
+
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "theme": "morning"
+    }/*EDITMODE-END*/;
+
+    const TIME_META = {
+      morning: { label: '07:00 — Morning', sub: 'Diffuse parchment light · ochre amber' },
+      dusk:    { label: '19:00 — Dusk',    sub: 'Low sun · orange-saturated amber'       },
+      night:   { label: '22:00 — Night',   sub: 'Near-black warmth · amber #c89244'       },
+    };
+
+    function applyTheme(theme) {
+      const html = document.documentElement;
+      html.classList.add('theme-anim');
+      html.setAttribute('data-theme', theme);
+      setTimeout(() => html.classList.remove('theme-anim'), 700);
+    }
+
+    function App() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      const [view, setView]   = React.useState('lobby');
+
+      // Sync theme on mount and on change
+      React.useEffect(() => {
+        applyTheme(t.theme);
+      }, [t.theme]);
+
+      const views = { lobby: LobbyView, gallery: GalleryView, map: MapView };
+      const ViewComponent = views[view] || LobbyView;
+      const meta = TIME_META[t.theme] || TIME_META.night;
+
+      return (
+        <>
+          <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
+            <StudioHeader view={view} onNavigate={setView} />
+            <ViewComponent />
+            {window.StudioFooter && <StudioFooter />}
+          </div>
+
+          <div className="time-label">{meta.label}</div>
+
+          <TweaksPanel>
+            <TweakSection label="Time of Day" />
+            <TweakRadio
+              label="Moment"
+              value={t.theme}
+              options={['morning', 'dusk', 'night']}
+              onChange={v => setTweak('theme', v)}
+            />
+          </TweaksPanel>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

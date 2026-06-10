@@ -1,0 +1,40 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Layout Semantics" subtitle="Page padding, section rhythm, card anatomy" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.2rem 2rem; margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+    .item { border: 1px solid var(--border); padding: 0.6rem; }
+    .lbl { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.08em; color: var(--text-faint); display: block; margin-bottom: 0.3rem; }
+    .val { font-family: var(--font-mono); font-size: 0.65rem; color: var(--amber-dim); display: block; }
+    .desc { font-family: var(--font-serif); font-size: 0.75rem; color: var(--text-dim); display: block; margin-top: 0.2rem; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="item">
+      <span class="lbl">--page-padding</span>
+      <span class="val">4rem · 64px</span>
+      <span class="desc">Horizontal page edge</span>
+    </div>
+    <div class="item">
+      <span class="lbl">--section-padding-v</span>
+      <span class="val">3rem · 48px</span>
+      <span class="desc">Vertical section rhythm</span>
+    </div>
+    <div class="item">
+      <span class="lbl">--card-padding</span>
+      <span class="val">1.6rem · 25.6px</span>
+      <span class="desc">Card interior</span>
+    </div>
+    <div class="item">
+      <span class="lbl">--card-gap</span>
+      <span class="val">1.5rem · 24px</span>
+      <span class="desc">Grid gap between cards</span>
+    </div>
+  </div>
+</body>
+</html>

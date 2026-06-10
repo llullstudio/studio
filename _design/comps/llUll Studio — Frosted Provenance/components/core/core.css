@@ -1,0 +1,250 @@
+/* llUll Studio — Core component classes
+ * Canonical class vocabulary: llull-*
+ * All values reference tokens — never hardcode colors here.
+ */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Wordmark ──────────────────────────────────────────────────── */
+.llull-wordmark {
+  font-family: var(--font-grotesk);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wordmark);
+  color: var(--amber);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3em;
+}
+.llull-wordmark--sm { font-size: 0.85rem; }
+.llull-wordmark--md { font-size: var(--text-xl); }
+.llull-wordmark--lg { font-size: 2rem; }
+.llull-wordmark-suffix {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+/* ── Section label ─────────────────────────────────────────────── */
+.llull-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ── Badge (status chip) ───────────────────────────────────────── */
+.llull-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  align-self: flex-start;
+}
+.llull-badge--active { color: var(--status-active-fg); border-color: var(--status-active-bd); }
+.llull-badge--live   { color: var(--status-live-fg);   border-color: var(--status-live-bd); }
+.llull-badge--dev    { color: var(--status-dev-fg);    border-color: var(--status-dev-bd); }
+.llull-badge--coming { color: var(--status-coming-fg); border-color: var(--status-coming-bd); }
+
+/* ── Tag (category chip) ───────────────────────────────────────── */
+.llull-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-dim);
+  color: var(--text-dim);
+}
+.llull-tag--amber { color: var(--amber-dim); border-color: var(--amber-faint); background: transparent; }
+
+/* ── Frost card ────────────────────────────────────────────────── */
+.llull-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  color: inherit;
+}
+.llull-card:hover { border-color: var(--amber-dim); }
+a.llull-card { cursor: pointer; }
+
+.llull-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--amber-dim);
+  text-transform: uppercase;
+}
+.llull-card-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--text);
+  line-height: var(--leading-snug);
+}
+.llull-card-domain {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+/* Glass top — the finding stays sharp */
+.llull-card-finding {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.52;
+  margin: 0.25rem 0 0;
+}
+/* Card body — behind the frost until hover */
+.llull-card-body {
+  filter: blur(var(--frost-blur));
+  opacity: var(--frost-opacity);
+  transition: filter 0.22s ease, opacity 0.22s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+.llull-card:hover .llull-card-body { filter: blur(0px); opacity: 1; }
+
+.llull-card-desc {
+  font-size: var(--text-base);
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+.llull-card-link {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.llull-card-link::after { content: ' →'; color: var(--amber-dim); }
+.llull-card-link:hover { color: var(--amber); }
+
+/* ── Mono link ─────────────────────────────────────────────────── */
+.llull-mono-link {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.15s;
+}
+.llull-mono-link::after { content: ' →'; color: var(--amber-dim); }
+.llull-mono-link:hover { color: var(--amber); }
+
+/* ── Nav link (header) ─────────────────────────────────────────── */
+.llull-nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-decoration: none;
+  transition: color 0.15s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.llull-nav-link:hover { color: var(--amber); }
+.llull-nav-link--active { color: var(--amber); }
+.llull-nav-link--coming { opacity: 0.3; cursor: default; pointer-events: none; }
+
+/* ── Button (extrapolated — the live site has no buttons) ──────── */
+.llull-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.llull-btn:hover { border-color: var(--text-dim); }
+.llull-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.llull-btn:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+.llull-btn--amber { border-color: var(--amber-dim); color: var(--amber); }
+.llull-btn--amber:hover { background: var(--amber-faint); border-color: var(--amber); }
+.llull-btn--ghost { border-color: transparent; color: var(--text-dim); }
+.llull-btn--ghost:hover { color: var(--amber); border-color: transparent; }
+.llull-btn--sm { font-size: 0.58rem; padding: 0.4rem 0.8rem; }
+
+/* ── Currently block ───────────────────────────────────────────── */
+.llull-currently { display: flex; gap: 3rem; align-items: flex-start; }
+.llull-currently-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--amber);
+  white-space: nowrap;
+  padding-top: 0.35rem;
+  min-width: 5.5rem;
+}
+.llull-currently-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  display: block;
+  transition: color 0.15s;
+}
+.llull-currently-title:hover { color: var(--amber); }
+.llull-currently-finding {
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin: 0 0 0.9rem;
+  max-width: 560px;
+}
+.llull-currently-meta {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-faint);
+  letter-spacing: var(--tracking-mono);
+  margin: 0;
+}
+.llull-currently-meta a {
+  color: var(--amber-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.llull-currently-meta a:hover { color: var(--amber); }

@@ -1,0 +1,53 @@
+<!-- @dsCard group="Colors" viewport="700x190" name="Text" subtitle="Text hierarchy — body, dim, faint" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.5rem 2rem; margin: 0; }
+    .row { display: flex; flex-direction: column; gap: 0.9rem; }
+    .specimen {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 0;
+      flex-shrink: 0;
+    }
+    .text-sample {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      flex: 1;
+    }
+    .token {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: var(--text-faint);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="specimen">
+      <div class="dot" style="background:var(--text);"></div>
+      <span class="text-sample" style="color:var(--text);">The work is the instrument, not the opinion.</span>
+      <span class="token">--text · #d4cfc6</span>
+    </div>
+    <div class="specimen">
+      <div class="dot" style="background:var(--text-dim);"></div>
+      <span class="text-sample" style="color:var(--text-dim);">Scored studies, dispositional profiling, and the Terroir methodology.</span>
+      <span class="token">--text-dim · #7a7468</span>
+    </div>
+    <div class="specimen">
+      <div class="dot" style="background:var(--text-faint); border: 1px solid var(--border);"></div>
+      <span class="text-sample" style="color:var(--text-faint);">IMPRINTS</span>
+      <span class="token">--text-faint · #3d3a34</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* llUll Studio — Webfonts
+ *
+ * Three typefaces in use:
+ *   EB Garamond   — Old-style serif. Headings, body text, findings.
+ *   JetBrains Mono — Monospace. Labels, status, navigation, metadata.
+ *   Space Grotesk  — Geometric sans. Wordmark only.
+ *
+ * Served via Google Fonts CDN.
+ * NOTE: For offline/print use, download the .woff2 files locally and
+ * replace this @import with @font-face declarations pointing to assets/fonts/.
+ * Source: https://fonts.google.com/
+ */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap');

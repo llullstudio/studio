@@ -1,0 +1,47 @@
+<!-- @dsCard group="Spacing" viewport="700x220" name="Frosted Provenance" subtitle="The signature card interaction — blurred body reveals on hover" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.2rem 1.5rem; margin: 0; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .lbl {
+      font-family: var(--font-mono); font-size: 0.56rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-faint); display: block; margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="cols">
+    <div>
+      <span class="lbl">At rest — body frosted</span>
+      <div class="llull-card" style="pointer-events:none;">
+        <div class="llull-card-num">I</div>
+        <div class="llull-card-title">Cognitive Cellar</div>
+        <div class="llull-card-domain">Analytical instruments · R. Llull</div>
+        <p class="llull-card-finding">The instrument doesn't care what you believe.</p>
+        <div class="llull-card-body">
+          <p class="llull-card-desc">Scored studies and dispositional profiling.</p>
+          <span class="llull-badge llull-badge--active">Active</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="lbl">On hover — body revealed</span>
+      <div class="llull-card" style="border-color:var(--amber-dim);">
+        <div class="llull-card-num">I</div>
+        <div class="llull-card-title">Cognitive Cellar</div>
+        <div class="llull-card-domain">Analytical instruments · R. Llull</div>
+        <p class="llull-card-finding">The instrument doesn't care what you believe.</p>
+        <div class="llull-card-body" style="filter:blur(0);opacity:1;">
+          <p class="llull-card-desc">Scored studies and dispositional profiling.</p>
+          <span class="llull-badge llull-badge--active">Active</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

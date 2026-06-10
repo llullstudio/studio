@@ -1,0 +1,89 @@
+/* llUll Studio — Time-of-day theme overrides
+ * Applied via [data-theme="…"] on <html>. Default :root = Night (in colors.css).
+ *
+ * SYSTEM
+ * ──────
+ * Night  → near-black warm canvas, amber #c89244
+ * Morning→ parchment cream surfaces, ochre amber #a07828 (muted in diffuse light)
+ * Dusk   → ultra-warm near-black, orange-amber #e89c30 (low sun, saturated)
+ */
+
+/* ── Morning (07:00–09:00) ─────────────────────────────────────────────────── */
+[data-theme="morning"] {
+  --bg:           #e8e3db;
+  --surface:      #f2ede5;
+  --surface-2:    #f9f6f2;
+  --border:       #cbc5bc;
+  --border-dim:   #d8d3cb;
+
+  --amber:        #a07828;
+  --amber-dim:    #785018;
+  --amber-faint:  #e8dac8;
+
+  --text:         #1a1814;
+  --text-dim:     #6b6560;
+  --text-faint:   #b0aaa2;
+
+  --status-active-fg: #a07828;
+  --status-active-bd: #c09040;
+  --status-live-fg:   #4a8a58;
+  --status-live-bd:   #80b890;
+  --status-dev-fg:    #785018;
+  --status-dev-bd:    #a89070;
+  --status-coming-fg: #9a9490;
+  --status-coming-bd: #c8c0b8;
+
+  --surface-page:      var(--bg);
+  --surface-card:      var(--surface);
+  --text-body:         var(--text);
+  --text-secondary:    var(--text-dim);
+  --text-label:        var(--text-faint);
+  --accent:            var(--amber);
+  --link:              var(--amber);
+  --border-card:       var(--border);
+  --border-card-hover: var(--amber-dim);
+
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.10);
+  --shadow-lift: 0 8px 24px rgba(0,0,0,0.14);
+  --focus-ring:  0 0 0 2px var(--bg), 0 0 0 4px var(--amber-dim);
+  --frost-opacity: 0.56; /* @kind other */
+}
+
+/* ── Dusk (18:00–20:00) ────────────────────────────────────────────────────── */
+[data-theme="dusk"] {
+  --bg:           #180d04;   /* Clearly warm — visible reddish-orange cast */
+  --surface:      #221208;
+  --surface-2:    #2e1a0c;
+  --border:       #48220e;
+  --border-dim:   #341808;
+
+  --amber:        #f0a030;   /* Low-sun orange — hotter than night gold */
+  --amber-dim:    #c47820;
+  --amber-faint:  #3e2008;
+
+  --text:         #f0dcc0;   /* Warm cream — orange-shifted */
+  --text-dim:     #9a7248;
+  --text-faint:   #5a3820;
+
+  --status-active-fg: #f0a030;
+  --status-active-bd: #c47820;
+  --status-live-fg:   #6aaa7a;
+  --status-live-bd:   #3d6b49;
+  --status-dev-fg:    #be7020;
+  --status-dev-bd:    #4a3020;
+  --status-coming-fg: #5a4030;
+  --status-coming-bd: #2a1808;
+
+  --surface-page:      var(--bg);
+  --surface-card:      var(--surface);
+  --text-body:         var(--text);
+  --text-secondary:    var(--text-dim);
+  --text-label:        var(--text-faint);
+  --accent:            var(--amber);
+  --link:              var(--amber);
+  --border-card:       var(--border);
+  --border-card-hover: var(--amber-dim);
+
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.60);
+  --shadow-lift: 0 8px 24px rgba(0,0,0,0.55);
+}

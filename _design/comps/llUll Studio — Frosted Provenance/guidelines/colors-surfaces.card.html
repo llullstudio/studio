@@ -1,0 +1,64 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Surfaces" subtitle="Background, card surface, border" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--bg); padding: 1.5rem; margin: 0; }
+    .row { display: flex; gap: 1rem; }
+    .swatch {
+      flex: 1; height: 64px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .meta {
+      margin-top: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+    }
+    .name { color: var(--text-dim); display: block; }
+    .hex  { color: var(--text-faint); display: block; margin-top: 0.15rem; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <div class="swatch" style="background:var(--bg); outline: 1px solid var(--border);"></div>
+      <div class="meta">
+        <span class="name">--bg</span>
+        <span class="hex">#0c0b09</span>
+      </div>
+    </div>
+    <div>
+      <div class="swatch" style="background:var(--surface);"></div>
+      <div class="meta">
+        <span class="name">--surface</span>
+        <span class="hex">#131210</span>
+      </div>
+    </div>
+    <div>
+      <div class="swatch" style="background:var(--surface-2);"></div>
+      <div class="meta">
+        <span class="name">--surface-2</span>
+        <span class="hex">#1a1915</span>
+      </div>
+    </div>
+    <div>
+      <div class="swatch" style="background:var(--border); height: 64px;"></div>
+      <div class="meta">
+        <span class="name">--border</span>
+        <span class="hex">#2a2720</span>
+      </div>
+    </div>
+    <div>
+      <div class="swatch" style="background:var(--border-dim);"></div>
+      <div class="meta">
+        <span class="name">--border-dim</span>
+        <span class="hex">#1e1c19</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
