@@ -1,16 +1,18 @@
 # CD Session Opener — llull.studio
-*Paste this at the start of a new CD session. Full brief and tokens are in the repo.*
+*Paste this at the start of a new CD session. Read all three source files before starting.*
 
 ---
 
-## Repo
+## Source files (read these first)
 
 **GitHub:** `https://github.com/llullstudio/studio`
 **Branch:** `design` (not main)
-**Brief:** `_design/briefs/01_cd_brief_frosted_provenance.md`
-**Tokens:** `_design/tokens/tokens.md`
 
-Read those two files first. They are the source of truth.
+| File | What |
+|---|---|
+| `_project/VISUAL_OS.md` | Register, spatial grammar, ground revision, card taxonomy — source of truth |
+| `_design/briefs/02_cd_brief_specimen_shift.md` | Current card mechanic brief and one-card test spec |
+| `_design/tokens/tokens.md` | All specific values (type sizes, colors, transitions, specimen colors) |
 
 ---
 
@@ -18,47 +20,29 @@ Read those two files first. They are the source of truth.
 
 llull.studio is the web presence of llUll Studio — analytical instruments, print publishing, creative work. The site is itself an instrument. It enacts the methodology it represents.
 
-**Design system: Frosted Provenance.**
-- Warm dark ground (`#0c0b09`) or parchment light (`#f2ece0`) — never cold
-- Cards are frosted glass specimens in a vitrine
-- Each card bleeds its own color through the frost (crimson, amber, slate, moss — each unique)
-- The *finding* (key insight) sits above the frost, always legible
-- Everything else is revealed on approach (hover)
-- Register: museum vitrine / Japanese pottery gallery / Swiss perfume boutique
+**Register: Andromeda Strain / Wildfire facility.** Clinical, not refined. Specimens are isolated organisms under observation, not curated artifacts.
 
-**Fonts:** EB Garamond (serif body), JetBrains Mono (labels/meta), Space Grotesk (wordmark)
+**Design system: Frosted Provenance — Specimen Shift mechanic.**
+- White clinical gallery space. Cool neutral ambient.
+- Frosted glass sliding panels hang in it. Each panel lit from within by the specimen's own warm light.
+- The warmth is behind the glass, not in the room.
+- The finding sits on the panel face — crisp, always legible. The specimen silhouette is behind the frost.
+- Text is never blurred. The glass changes; the copy does not.
 
----
-
-## What to prototype
-
-**The Lobby (index.html) in dark mode and light mode.**
-
-Five elements:
-1. Header — wordmark `llUll studio` + nav (Gallery / Map / Substack)
-2. H1 — "Instruments for clarity." with *clarity* in italic amber
-3. "Currently" section — one featured piece, large and prominent
-4. Imprint cards (3-col) — Cognitive Cellar / llUll press / studio oi
-5. Instrument cards (2×2) — Engine of Utopia / Kernl / The Last Backup / The Collector
-
-**Show one card in hover state** — Kernl (amber specimen) is the strongest reveal, use it.
-
----
-
-## The one thing that must land
-
-Specimen glow through frost at rest state. Each card should have a soft, organic radial glow in its color — visible at rest, not hidden. This is the visual identity of the system. It is easy to underdo. Push it until it reads clearly, then pull back 10%.
+**Fonts:** EB Garamond (findings only), JetBrains Mono (everything else — primary voice), Space Grotesk (wordmark)
 
 ---
 
 ## What I don't want
 
-- Cold colors anywhere
+- Cold blue-grey clinical (the warmth is internal, not absent)
+- Dark ground as the page environment (the gallery is light)
 - Geometric or hard-edged glows
 - Decoration for its own sake
 - A tech dashboard
-- Stark white in light mode (it's parchment: `#f2ece0`)
+- Portfolio site aesthetic
+- `#000000` anywhere
 
 ---
 
-*Full spec in the repo — design branch, brief 01 and tokens.md.*
+*Read VISUAL_OS.md before starting. It supersedes the register language in briefs 01 and 02.*

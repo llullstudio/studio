@@ -69,6 +69,8 @@ Layer model: L0 ground → L1 backlit milk-glass pane tinted by specimen color �
 
 Hover additionally reveals one line of mono metadata beneath the finding.
 
+**White rule (amended 2026-06-11):** The "never white" constraint is rescinded for the frost medium. Panes and scatter may sit in the white-value range — the day state especially, where the exemplar photo shows near-white panes backlit by daylight. The surviving constraint is temperature, not value: light passing through any pane must be warm-tinted; nothing reads clinical or blue-grey. Grounds stay warm at both ends (night: `#0c0b09`, day: `#e8e3db`). White is legitimate wherever it is the glass talking.
+
 ## 5. Specimen colors + marks
 
 Each card's pane tint and hover identity. Color is the specimen's identity, not the system's decoration. Mark policy: Mixed — representational where an obvious emblem exists, schematic otherwise.
@@ -133,3 +135,4 @@ Permission exists for occasional life behind the glass: slow specimen drift or f
 |---|---|
 | 2026-06-09 | Original token sheet (frost-on-text mechanic). |
 | 2026-06-10 | Specimen Shift: layer stack replaces frost-on-text; legibility floors added (sub-floor type sizes raised); four-state ambient scaffold; specimen colors merged (06-09 sheet + HANDOFF) with mark assignments; CD export values folded in. |
+| 2026-06-11 | §4 white rule amended: "never white" rescinded for frost medium; temperature is the surviving constraint, not value. Session opener (00) rewritten session-agnostic, pointing at brief 02. |
