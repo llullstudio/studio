@@ -117,13 +117,35 @@ Mechanics: `[data-theme]` on `<html>`, ~30 lines JS reading local hour, crossfad
 |---|---|
 | Max content width | 1720px |
 | Page padding (sides) | 4rem (64px) |
-| Card width (desktop) | 560px |
-| Card height (desktop) | ~820px |
+| Card reference width | 487px (3-per-row at max content width) |
+| Card aspect ratio | 3:2 landscape (STUDY) · 1:1 (INSTRUMENT) · 2:3 portrait (DISPATCH) |
+| Card min width | 320px — below this, grid collapses |
 | Card gap | 72px |
 | Section padding | 3rem top/bottom |
-| Grid — imprints | 3-col |
+| Grid — studies | 3-col default; 2-col at ≤1200px; 1-col mobile |
 | Grid — instruments | 2-col |
-| Grid — gallery studies | TBD (CD to determine) |
+| Grid — imprints | 3-col |
+
+**Card zone anatomy (locked 2026-06-12):**
+
+| Element | Value |
+|---|---|
+| Zone bottom anchor | 24px from card bottom edge |
+| Zone inner padding | 0 26px (labels + content rows) |
+| Zone label font | JetBrains Mono 700, 0.65rem, letter-spacing 0.28em, uppercase |
+| Zone label — type (STUDY etc.) | `rgba(15,40,30,.78)` — always visible |
+| Zone label — status (PUBLISHED etc.) | `rgba(12,30,25,.42)` — hover reveal only |
+| Gap: label row → rule | 5px |
+| `--zone-rule` | 1px, full card width, `linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 4%, rgba(255,255,255,.55) 96%, transparent 100%)` |
+| Gap: rule → content row | 8px |
+| Content row gap (title ↔ finding) | 16px |
+| Title column width | 48% of zone |
+| Finding column | flex: 1 (remainder) |
+| Badge position | top: 22px, right: 26px |
+| Badge border | 3px solid `rgba(255,255,255,.75)` |
+| Badge glyph panel | `rgba(255,255,255,.88)` fill, padding 7px 10px |
+| Badge label font | JetBrains Mono 700, 0.65rem, letter-spacing 0.22em |
+| Study number position | top: 26px, left: 26px |
 
 ## 8. Motion (deferred)
 
@@ -136,3 +158,4 @@ Permission exists for occasional life behind the glass: slow specimen drift or f
 | 2026-06-09 | Original token sheet (frost-on-text mechanic). |
 | 2026-06-10 | Specimen Shift: layer stack replaces frost-on-text; legibility floors added (sub-floor type sizes raised); four-state ambient scaffold; specimen colors merged (06-09 sheet + HANDOFF) with mark assignments; CD export values folded in. |
 | 2026-06-11 | §4 white rule amended: "never white" rescinded for frost medium; temperature is the surviving constraint, not value. Session opener (00) rewritten session-agnostic, pointing at brief 02. |
+| 2026-06-12 | §7 zone anatomy locked: zone layout, white rule, badge spec, card reference width/min-width, responsive grid breakpoints. Brief 03 written for CD new project. |

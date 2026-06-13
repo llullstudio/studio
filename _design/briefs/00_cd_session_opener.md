@@ -1,5 +1,5 @@
 # CD Session Opener — llull.studio
-*Paste this at the start of a new CD session. Read all three source files before starting.*
+*Paste this at the start of a new CD session (new project). Read all three source files before starting.*
 
 ---
 
@@ -10,9 +10,9 @@
 
 | File | What |
 |---|---|
-| `_project/VISUAL_OS.md` | Register, spatial grammar, ground revision, card taxonomy — source of truth |
-| `_design/briefs/02_cd_brief_specimen_shift.md` | Current card mechanic brief and one-card test spec |
-| `_design/tokens/tokens.md` | All specific values (type sizes, colors, transitions, specimen colors) |
+| `_design/VISUAL_OS.md` | Register, spatial grammar, ground revision, card taxonomy — source of truth |
+| `_design/briefs/03_cd_brief_card_v1.md` | Current card brief — zone layout, badge, white rule, hover mechanic |
+| `_design/tokens/tokens.md` | All specific values (type sizes, colors, transitions, specimen colors, zone anatomy) |
 
 ---
 
@@ -45,4 +45,5 @@ llull.studio is the web presence of llUll Studio — analytical instruments, pri
 
 ---
 
-*Read VISUAL_OS.md before starting. It supersedes the register language in briefs 01 and 02.*
+*Read VISUAL_OS.md before starting. It supersedes the register language in all prior briefs.*
+*Brief 03 is the active card spec — do not read briefs 01 or 02.*
