@@ -35,6 +35,16 @@ Clinical, not refined. Information-dense but spare. The work is isolated, labele
 
 **The specimens are not artifacts in a vitrine. They are organisms under observation in a containment facility.**
 
+**Extended register (2026-06-12): The Greenhouse.**
+
+The Wildfire facility is not a forensic lab with finished specimens — it is a greenhouse. Things are alive here, at different stages. Some are seeds. Some are nearly ready. Some are being grafted onto other things. The observation happens *during* growth, not after.
+
+This resolves the tension between the clinical register and the organic cadence of the studio: a dozen studies in motion simultaneously, apps at different stages, instruments being calibrated. A greenhouse IS clinical — controlled conditions, systematic observation — but the things inside are alive and unpredictable.
+
+Implication for the fog/frost mechanic: the enclosure is fog, not glass. The specimens generate their own obscurity. The veil is biological, not manufactured. Maturity state becomes atmospheric: a published study has less fog, a study in-flight more. Status is a clarity level, not a badge.
+
+The studio itself is biomechanical: the operator's biological mind (organic decisions, irregular cadence, instinct) working with a mechanical mind (systematic, compressive, recombinant). Neither produces this work alone. The greenhouse grows from that hybrid process.
+
 What this means in practice:
 - JetBrains Mono is the primary voice — classification, labels, metadata, structure. EB Garamond handles findings only (the human observation note above the frost).
 - Amber is hazard signal — caution, mechanism exposed, live system. Not warmth. Not elegance.
