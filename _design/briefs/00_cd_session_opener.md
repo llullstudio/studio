@@ -10,9 +10,9 @@
 
 | File | What |
 |---|---|
-| `_design/VISUAL_OS.md` | Register, spatial grammar, ground revision, card taxonomy — source of truth |
-| `_design/briefs/03_cd_brief_card_v1.md` | Current card brief — zone layout, badge, white rule, hover mechanic |
-| `_design/tokens/tokens.md` | All specific values (type sizes, colors, transitions, specimen colors, zone anatomy) |
+| `_design/VISUAL_OS.md` | Register, spatial grammar, card taxonomy, six-channel card encoding — source of truth |
+| `_design/briefs/05_cd_brief_silhouette_clarity.md` | Current card brief — silhouette accuracy, findings, status-as-clarity, glyphs |
+| `_design/tokens/tokens.md` | All specific values (type sizes, **color = type** §5, transitions, zone anatomy §7) |
 
 ---
 
@@ -46,4 +46,4 @@ llull.studio is the web presence of llUll Studio — analytical instruments, pri
 ---
 
 *Read VISUAL_OS.md before starting. It supersedes the register language in all prior briefs.*
-*Brief 03 is the active card spec — do not read briefs 01 or 02.*
+*Brief 05 is the active card spec — do not read briefs 01–04. Color = type (tokens §5); the per-specimen color model is retired.*

@@ -71,28 +71,76 @@ Hover additionally reveals one line of mono metadata beneath the finding.
 
 **White rule (amended 2026-06-11):** The "never white" constraint is rescinded for the frost medium. Panes and scatter may sit in the white-value range — the day state especially, where the exemplar photo shows near-white panes backlit by daylight. The surviving constraint is temperature, not value: light passing through any pane must be warm-tinted; nothing reads clinical or blue-grey. Grounds stay warm at both ends (night: `#0c0b09`, day: `#e8e3db`). White is legitimate wherever it is the glass talking.
 
-## 5. Specimen colors + marks
+## 5. Color by type · glyph by family · mark by specimen
 
-Each card's pane tint and hover identity. Color is the specimen's identity, not the system's decoration. Mark policy: Mixed — representational where an obvious emblem exists, schematic otherwise.
+**Locked 2026-06-17.** Three independent encoding channels. They do not share a palette.
 
-| Specimen | Hex | Mark |
+- **Color = TYPE.** Every card of a type shares one glass tint. Color says *what kind of thing this is*, nothing else. (Supersedes the pre-06-17 per-specimen color table — that model is retired. Specimen identity now rides on glyph + silhouette, never color.)
+- **Glyph (badge) = the card's group.** Family for studies, imprint for instruments/specimens, source for dispatches. See §5.2.
+- **Mark / silhouette (image layer L2) = the specimen itself.** The cuckoo, the firefly scatter. Blurred at rest, sharp on reveal. This is the only channel that is per-specimen. See §5.3.
+
+Brand colors are a fourth, separate system: e.g. Kernl's amber is the product's own branding and lives inside the card's content/image, **never on the glass.** Kernl is an INSTRUMENT, so its glass is blue.
+
+### 5.1 Type colors (glass tint)
+
+| Type | Glass tint (rest) | Base hex | Shape (aspect) |
+|---|---|---|---|
+| `STUDY` | `rgba(42, 92, 58, 0.45)` | `#2a5c3a` forest green | 3:2 landscape |
+| `INSTRUMENT` | `rgba(52, 78, 128, 0.45)` | `#344e80` steel blue | 1:1 square |
+| `DISPATCH` | `rgba(200, 146, 68, 0.45)` | `#c89244` warm amber | 2:3 portrait |
+| `PLATE` | near-neutral / minimal *(provisional)* | warm-grey, low alpha | 1:1 (collides — see note) |
+
+Opacity 0.45 is the accepted exemplar value (three-card comp, 2026-06-17). The first three are locked.
+
+**PLATE is the exception type** (studio oi visual works — figures/plates; earned 2026-06-17 by the Tarifa series). It bends the card mechanic three ways and must be exemplar-tested before any values lock:
+- **Tint is minimal.** The artwork carries its own color; a glass tint over it muddies. PLATE glass stays near-neutral, low alpha — the art is the color channel here, not the type.
+- **The frost inverts.** A finished plate is the most mature specimen → the *clearest* glass (status-as-clarity, §`--specimen-blur`). Frost-reveal mostly collapses: the art shows, only a faint membrane remains. Foggy only while in-prep.
+- **Shape collides with INSTRUMENT (1:1).** Either color disambiguates, or PLATE gets a framed portrait card (square art + caption block below, museum-plate layout). Decide at build.
+
+### 5.2 Glyph encoding (badge mark)
+
+The badge glyph names the card's group. The axis differs by type:
+
+| Type | Glyph encodes | Vocabulary |
 |---|---|---|
-| 00 Cognitive Cellar | TBD | TBD |
-| 01 Fireflies | `#d4a020` | Representational — firefly scatter, upper drift |
-| 02 The Cuckoo Protocol | `#344e80` | Representational — cuckoo in profile, upper-left drift |
-| 03 WokeOS | `#6b6b72` | Schematic — OS stack, flat center |
-| 06 CultureOS | TBD | Schematic — cluster map |
-| 07 CorporateOS | `#2a3a5c` | Schematic — org cascade, corner |
-| 08 HumanOS | `#c4852a` | Schematic — 7-layer stack, center-right |
-| 09 Wokefied | TBD | TBD |
-| 11 EpistemyOS | `#1a5c5a` | Schematic — platform axis, center |
-| 12 Cascade | `#b84020` | Schematic — lattice/nucleation, lower-center |
-| 13 Engine of Utopia | `#8c1e1a` | Schematic — transmission chain, lower-right cluster |
-| 14 Social Terroir | `#2a5c3a` | Schematic — 7-platform grid, diffuse center |
-| Kernl | `#c89244` | Schematic — kernel/shell, centered warm glow |
-| The Last Backup | `#4a5f7a` | TBD — diffuse upper |
-| The Collector | `#3a5c2a` | TBD — diffuse |
-| Event Horizon | `#4a2a6b` | TBD — lower drift |
+| `STUDY` | family | Mechanism · OS Cluster · Signal · Genealogy · Craft |
+| `INSTRUMENT` | imprint | Cognitive Cellar · Wine Snob / llUll press |
+| `DISPATCH` | source study, or imprint if standalone | Study 00–14 · Papers · llUll press |
+| `PLATE` | imprint | studio oi · llUll press |
+
+Family glyphs (proposed, 2026-06-17 — earned, not allocated; Tony confirms):
+
+| Family | Proposed glyph | Reading |
+|---|---|---|
+| Mechanism | `o→o→o` | linkage / propagation (exemplar-confirmed) |
+| OS Cluster | stacked bars `≡` | operating-system layers |
+| Signal | radiating arcs `)))` | transmission / what gets through |
+| Genealogy | branching line `⅄` | descent / transmission chain |
+| Craft | single rule `—` | standalone, no cluster |
+
+### 5.3 Specimen marks (silhouette, image layer)
+
+Per-specimen identity. Mark policy: Mixed — representational where an obvious emblem exists, schematic otherwise. **Decoupled from color** as of 06-17 (the hexes that previously sat here were doing double duty as glass tint; that role is gone).
+
+| Specimen | Mark |
+|---|---|
+| 00 Cognitive Cellar | TBD |
+| 01 Fireflies | Representational — firefly scatter, upper drift |
+| 02 The Cuckoo Protocol | Representational — cuckoo in profile, upper-left drift |
+| 03 WokeOS | Schematic — OS stack, flat center |
+| 06 CultureOS | Schematic — cluster map |
+| 07 CorporateOS | Schematic — org cascade, corner |
+| 08 HumanOS | Schematic — 7-layer stack, center-right |
+| 09 Wokefied | TBD |
+| 10 Brain Drain | TBD |
+| 11 EpistemyOS | Schematic — platform axis, center |
+| 12 Cascade | Schematic — lattice/nucleation, lower-center |
+| 13 Engine of Utopia | Schematic — transmission chain, lower-right cluster |
+| 14 Social Terroir | Schematic — 7-platform grid, diffuse center |
+| Kernl | Schematic — kernel/shell, centered warm glow |
+| The Last Backup | TBD — diffuse upper |
+| The Collector | TBD — diffuse |
+| Event Horizon | TBD — lower drift |
 
 TBD entries deliberately unassigned — earned, not allocated. Tony assigns; Cowork records.
 
@@ -159,3 +207,5 @@ Permission exists for occasional life behind the glass: slow specimen drift or f
 | 2026-06-10 | Specimen Shift: layer stack replaces frost-on-text; legibility floors added (sub-floor type sizes raised); four-state ambient scaffold; specimen colors merged (06-09 sheet + HANDOFF) with mark assignments; CD export values folded in. |
 | 2026-06-11 | §4 white rule amended: "never white" rescinded for frost medium; temperature is the surviving constraint, not value. Session opener (00) rewritten session-agnostic, pointing at brief 02. |
 | 2026-06-12 | §7 zone anatomy locked: zone layout, white rule, badge spec, card reference width/min-width, responsive grid breakpoints. Brief 03 written for CD new project. |
+| 2026-06-17 | §5 rewritten: **color = type** (not specimen), per-specimen color table retired. Three independent channels split out — type color (5.1), glyph by family/imprint/source (5.2), specimen silhouette (5.3). Kernl brand color noted as separate. Family glyphs proposed. Driven by accepted three-card exemplar. |
+| 2026-06-17 | SPECIMEN type retired (it was the metaphor, not a species; a domain-under-observation has no finding → no card). Replaced by **PLATE** (studio oi visual works), earned by the Tarifa series. PLATE is the exception type — minimal tint, inverted frost, 1:1 shape collision flagged. xModal moves to parked studio-oi research, not yet a card. |

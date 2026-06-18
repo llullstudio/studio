@@ -127,11 +127,35 @@ Four types. Uppercase JetBrains Mono on panel face. One type per card, always pr
 | Type | What | Examples |
 |---|---|---|
 | `STUDY` | Numbered analytical investigations | Terroir 00–14 |
-| `INSTRUMENT` | Functional tools and live products | Kernl, Event Horizon, The Collector |
-| `DISPATCH` | Written arguments, essays, field reports | Interregnum, Merit Culture, Papers |
-| `SPECIMEN` | Territories and domains under observation | The Last Backup |
+| `INSTRUMENT` | Functional tools and live products | Kernl, Event Horizon, The Collector, The Last Backup |
+| `DISPATCH` | Released output — writing or print, sent into the world (declared broad) | Articles, Papers, The Lyon Building, Wine Snob |
+| `PLATE` | studio oi visual works — figures/plates | Tarifa series |
 
 Displayed on card face as: `STUDY 02 · MECHANISM · PUBLISHED` (type · family · status).
+
+**Why four, not "specimen":** "Specimen" is the substance behind *every* card's glass — the genus, not a species. It can't also name one type. And the abandoned SPECIMEN type had no positive definition: a "domain under observation" produces no finding, so it can't be inscribed on a card. The honest fault line is **writing/print vs. made visual work** — DISPATCH (declared broad: articles → books → brand) vs. PLATE (studio oi visual output).
+
+**Type assignments resolved 2026-06-17:**
+- **The Last Backup → INSTRUMENT.** A framework/tool, not a territory; matches the gallery inventory.
+- **SPECIMEN retired; PLATE introduced**, earned by the Tarifa series (4 studio oi vectorized plates). PLATE is the exception type — see card-encoding note. Trip-wire to split a dedicated visual type was "when studio oi ships work"; it shipped.
+- **xModal** (studio oi creative research, renamed from Cross-Modal 2026-06-16) is parked research, **not yet a card** — not a finished plate. It re-enters the type system only when it produces a shippable artifact.
+
+---
+
+## Card encoding — the six channels (locked 2026-06-17)
+
+A card carries six independent signals. Each channel means one thing. They never borrow from each other.
+
+| Channel | Encodes | Notes |
+|---|---|---|
+| **Shape** (aspect ratio) | type | 3:2 STUDY · 1:1 INSTRUMENT · 2:3 DISPATCH · PLATE TBD (1:1 collides — resolve at build) |
+| **Color** (glass tint) | type | green / blue / amber. Reinforces shape. PLATE is the exception — minimal tint, art carries its own color. |
+| **Glyph** (badge) | the card's group | family (study) · imprint (instrument/specimen) · source study (dispatch) |
+| **Title** | specimen identity | the name |
+| **Image** (silhouette, blurred → reveal) | the specimen itself | cuckoo, firefly scatter, schematic |
+| **Clarity** (fog density) | status | published = clearer · in-flight = foggier. The greenhouse rule. |
+
+Type is deliberately double-signaled (shape + color). Color is **not** per-specimen — a product's own brand color (e.g. Kernl amber) lives inside the image/content, never on the glass. Full token spec: `_design/tokens/tokens.md` §5.
 
 ---
 
