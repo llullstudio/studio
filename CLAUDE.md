@@ -37,7 +37,7 @@ Imprint cards:
 
 Instrument cards (below imprints):
 - Engine of Utopia — In Development
-- Kernl — Active Build → cognitivecellar.com (update when kernl.app exists)
+- Kernl — Pilot → cognitivecellar.com (update when kernl.app exists)
 
 ---
 
@@ -114,26 +114,33 @@ Dark academic. Precision instrument feel. No decoration that isn't load-bearing.
 ## Folder Structure
 
 ```
-llull.studio/
-  CLAUDE.md               ← this file (Cowork session primer — stays at root)
-  .gitignore              ← blocks _project/ from GitHub/Vercel
-  index.html              ← Lobby (built)
-  gallery.html            ← Gallery (not started)
-  map.html                ← Map — static first (not started)
-  robots.txt              ← indexing suppressed until launch
-  _project/               ← never committed to git, never public
+PRESENCE/                 ← superset folder (top-level peer of PROJECTS, PERSONAL)
+  llull.studio/           ← THE SITE ONLY — git repo root; select this to prime web work
+    CLAUDE.md             ← this file (session primer — stays at repo root)
+    .gitignore            ← .DS_Store etc.
+    index.html            ← Lobby (built; on main + design)
+    gallery.html          ← Gallery (not started)
+    map.html              ← Map — static first (not started)
+    robots.txt            ← indexing suppressed until launch
+    _design/              ← design pipeline — committed to the `design` branch ONLY
+                            (invisible on main; CD reads it from GitHub)
+  _project/               ← SITE-PRODUCTION files — sibling of the site, never under git, never public
     PLAN.md               ← build plan, phases, open decisions
     FRAMEWORK.md          ← studio architecture, imprint structure
+    GALLERY_INVENTORY.md  ← full catalog of studies/articles/instruments
+    HANDOFF.md            ← session handoff (live next-action doc)
     _ingest/              ← drop new material here (Grok/Perplexity/Gemini outputs, design refs, copy)
       INTAKE_LOG.md       ← log of what came in and where it went
     _processed/           ← absorbed and filed by type
       design/             ← style decisions, design references, CD outputs
       content/            ← catalog copy, article data, card text
-      research/           ← AI session transcripts, external research
+      research/           ← AI session transcripts, external research, the corpus dashboard
     _ref/                 ← permanent reference (pillar architecture, etc.)
 ```
 
-**Pipeline:** Drop new material in `_ingest/` → Claude absorbs → moves to `_processed/<type>/` → logs in INTAKE_LOG.md.
+**Two mechanisms keep production out of the site:** `_design/` is separated by git *branch* (design-only, never on main); `_project/` is separated by *directory* (sibling of the site, outside the repo entirely). The deployed site is just `index.html` + `robots.txt`.
+
+**Pipeline:** Drop new material in `_project/_ingest/` → Claude absorbs → moves to `_project/_processed/<type>/` → logs in INTAKE_LOG.md.
 
 Single-file HTML per view. No build step. Commit web files → Vercel auto-deploys.
 
