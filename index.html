@@ -1,514 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>llUll Studio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llUll press</title>
+<meta name="description" content="llUll press publishes carefully researched works of history, architecture, and epistemology. The Lyon Building: A Corner In History, by A. E. Martinez.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fdfcfa'/%3E%3Crect x='6' y='5' width='20' height='22' fill='none' stroke='%23b9644b' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://llull.studio/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="llUll press">
+<meta property="og:title" content="llUll press">
+<meta property="og:description" content="The Lyon Building: A Corner In History. Built 1886 in St. Augustine, Florida, of poured concrete when the rest of the city was wood.">
+<meta property="og:url" content="https://llull.studio/">
+<meta property="og:image" content="https://llull.studio/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* ──────────────────────────────────────────────────────────────
+   llUll press — llull.studio
+   Type and colour taken from the book itself: Libre Baskerville,
+   terracotta from the Lyon Building identity system.
+   Deliberately single-theme. This is a printed page, not an app.
+   ────────────────────────────────────────────────────────────── */
 
-    :root {
-      --bg:        #0c0b09;
-      --surface:   #131210;
-      --border:    #2a2720;
-      --amber:     #c89244;
-      --amber-dim: #8a6530;
-      --text:      #d4cfc6;
-      --text-dim:  #7a7468;
-      --text-faint:#3d3a34;
-      --serif:     'EB Garamond', Georgia, serif;
-      --mono:      'JetBrains Mono', 'Courier New', monospace;
-      --grotesk:   'Space Grotesk', system-ui, sans-serif;
-    }
+:root{
+  --paper:      #fdfcfa;
+  --paper-2:    #f6f3ee;
+  --ink:        #1a1613;
+  --ink-mid:    #4a423c;
+  --ink-soft:   #8a8078;
+  --terracotta: #b9644b;
+  --terracotta-deep: #9c4d36;
+  --burgundy:   #69322d;
+  --rule:       rgba(26,22,19,.14);
+  --rule-soft:  rgba(26,22,19,.08);
+  --serif: 'Libre Baskerville', 'Baskerville', 'Georgia', serif;
+  --measure: 34em;
+}
 
-    html { font-size: 16px; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--serif);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+html{font-size:16px;-webkit-text-size-adjust:100%}
 
-    /* ── HEADER ────────────────────────────────────────────────── */
-    header {
-      padding: 4rem 4rem 3rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.0625rem;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
 
-    .header-left {}
+a{color:var(--terracotta-deep);text-decoration:none;border-bottom:1px solid rgba(185,100,75,.35)}
+a:hover{border-bottom-color:var(--terracotta-deep)}
+a:focus-visible{outline:2px solid var(--terracotta-deep);outline-offset:3px;border-radius:1px}
 
-    .wordmark {
-      font-family: var(--grotesk);
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: var(--amber);
-      margin-bottom: 1.4rem;
-    }
+.wrap{
+  max-width:64rem;
+  margin:0 auto;
+  padding:0 clamp(1.35rem,5vw,3rem);
+}
 
-    .wordmark-studio {
-      font-family: var(--mono);
-      font-weight: 400;
-      color: var(--text-dim);
-    }
+/* ── eyebrow ─────────────────────────────────────────────── */
+.eyebrow{
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--terracotta);
+  line-height:1.6;
+}
 
-    h1 {
-      font-family: var(--serif);
-      font-size: 2.6rem;
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--text);
-      max-width: 640px;
-      margin-bottom: 1rem;
-    }
+/* ── masthead ────────────────────────────────────────────── */
+.masthead{
+  padding:clamp(2.25rem,5vw,3.5rem) 0 clamp(1.75rem,4vw,2.5rem);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:.35rem 2rem;
+  border-bottom:1px solid var(--rule);
+}
+.wordmark{
+  font-size:1.3rem;
+  font-weight:700;
+  letter-spacing:.005em;
+  color:var(--ink);
+}
+.seat{
+  font-size:.82rem;
+  font-style:italic;
+  color:var(--ink-soft);
+}
 
-    h1 em {
-      font-style: italic;
-      color: var(--amber);
-    }
+/* ── hero ────────────────────────────────────────────────── */
+.book{
+  display:grid;
+  grid-template-columns:minmax(0,17rem) minmax(0,1fr);
+  gap:clamp(2rem,5vw,4.5rem);
+  align-items:start;
+  padding:clamp(2.75rem,6vw,4.5rem) 0 clamp(2.5rem,5vw,3.75rem);
+}
 
-    .tagline {
-      font-size: 1.05rem;
-      color: var(--text-dim);
-      max-width: 560px;
-      line-height: 1.6;
-    }
+.jacket{margin:0}
+.jacket img{
+  display:block;
+  width:100%;
+  height:auto;
+  background:var(--paper-2);
+  box-shadow:
+    0 0 0 1px rgba(26,22,19,.10),
+    0 1px 1px rgba(26,22,19,.06),
+    0 14px 34px -16px rgba(26,22,19,.34);
+}
+.jacket figcaption{
+  margin-top:.9rem;
+  font-size:.76rem;
+  font-style:italic;
+  line-height:1.55;
+  color:var(--ink-soft);
+}
 
-    /* ── HEADER NAV ────────────────────────────────────────────── */
-    .header-nav {
-      display: flex;
-      gap: 2.2rem;
-      padding-top: 0.15rem;
-      flex-shrink: 0;
-    }
+.title{
+  font-size:clamp(1.95rem,5.2vw,2.9rem);
+  font-weight:700;
+  line-height:1.12;
+  letter-spacing:.005em;
+  text-transform:uppercase;
+  margin:.65rem 0 .3rem;
+  text-wrap:balance;
+}
+.subtitle{
+  font-size:clamp(1.1rem,2.6vw,1.45rem);
+  font-style:italic;
+  color:var(--terracotta);
+  line-height:1.35;
+  margin-bottom:.15rem;
+}
+.byline{
+  font-size:.95rem;
+  color:var(--ink-mid);
+  margin-top:1.15rem;
+  padding-top:1.15rem;
+  border-top:1px solid var(--rule-soft);
+}
 
-    .header-nav a {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+.blurb{
+  max-width:var(--measure);
+  margin-top:1.5rem;
+}
+.blurb p + p{margin-top:1.15rem}
 
-    .header-nav a:hover:not(.coming) { color: var(--amber); }
-    .header-nav a.coming {
-      opacity: 0.3;
-      cursor: default;
-      pointer-events: none;
-    }
+.pull{
+  font-style:italic;
+  color:var(--burgundy);
+  font-size:1.12rem;
+  line-height:1.6;
+  margin:1.5rem 0;
+  padding-left:1.1rem;
+  border-left:2px solid var(--terracotta);
+}
 
-    /* ── CURRENTLY — the live wire ─────────────────────────────── */
-    /* Update manually when a new piece ships.                      */
-    .currently {
-      display: flex;
-      gap: 3rem;
-      align-items: flex-start;
-    }
+/* ── buy ─────────────────────────────────────────────────── */
+.buy{
+  margin-top:2rem;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:1rem 1.35rem;
+}
+.btn{
+  display:inline-flex;
+  align-items:baseline;
+  gap:.7rem;
+  background:var(--terracotta-deep);
+  color:var(--paper);
+  border:none;
+  padding:.92rem 1.5rem;
+  font-family:var(--serif);
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition:background .16s ease;
+}
+.btn:hover{background:var(--burgundy);border-bottom-color:transparent}
+.btn .price{
+  font-size:.86rem;
+  letter-spacing:.02em;
+  text-transform:none;
+  opacity:.92;
+}
+.stock{
+  font-size:.82rem;
+  font-style:italic;
+  color:var(--ink-soft);
+}
 
-    .currently-tag {
-      font-family: var(--mono);
-      font-size: 0.58rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--amber);
-      white-space: nowrap;
-      padding-top: 0.35rem;
-      min-width: 5.5rem;
-    }
+.specs{
+  margin-top:1.6rem;
+  font-size:.82rem;
+  line-height:1.9;
+  color:var(--ink-soft);
+  list-style:none;
+}
+.specs li{display:inline}
+.specs li + li::before{content:" · ";color:var(--rule)}
 
-    .currently-title {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.25;
-      margin-bottom: 0.5rem;
-      text-decoration: none;
-      display: block;
-      transition: color 0.15s;
-    }
+/* ── claims ──────────────────────────────────────────────── */
+.claims{
+  border-top:1px solid var(--rule);
+  padding:clamp(2.5rem,5vw,3.5rem) 0 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));
+  gap:clamp(2rem,4vw,3.5rem);
+}
+.claim h2{
+  font-size:1.06rem;
+  font-weight:700;
+  line-height:1.35;
+  margin:.7rem 0 .65rem;
+}
+.claim p{color:var(--ink-mid);font-size:1rem;line-height:1.72}
 
-    .currently-title:hover { color: var(--amber); }
+/* ── press ───────────────────────────────────────────────── */
+.press{
+  margin-top:clamp(3rem,6vw,4.5rem);
+  padding-top:clamp(2.25rem,4vw,3rem);
+  border-top:1px solid var(--rule);
+  max-width:var(--measure);
+}
+.press h2{
+  font-size:1.06rem;
+  font-weight:700;
+  margin:.7rem 0 .7rem;
+}
+.press p{color:var(--ink-mid);font-size:1rem}
+.press p + p{margin-top:1rem}
+.sources{
+  margin-top:1.35rem;
+  font-size:.86rem;
+  font-style:italic;
+  color:var(--ink-soft);
+  line-height:1.7;
+}
 
-    .currently-finding {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--text-dim);
-      line-height: 1.6;
-      margin-bottom: 0.9rem;
-      max-width: 560px;
-    }
+/* ── footer ──────────────────────────────────────────────── */
+footer{
+  margin-top:clamp(3.25rem,6vw,5rem);
+  padding:1.5rem 0 3.5rem;
+  border-top:1px solid var(--rule);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:.4rem 2rem;
+  font-size:.8rem;
+  color:var(--ink-soft);
+}
 
-    .currently-meta {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      color: var(--text-faint);
-      letter-spacing: 0.08em;
-    }
+/* ── narrow ──────────────────────────────────────────────── */
+@media (max-width:46rem){
+  .book{grid-template-columns:1fr;gap:2.25rem}
+  .jacket{max-width:15rem}
+}
 
-    .currently-meta a {
-      color: var(--amber-dim);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .currently-meta a:hover { color: var(--amber); }
-
-    /* ── SECTIONS ──────────────────────────────────────────────── */
-    main {
-      flex: 1;
-      padding: 0 4rem;
-    }
-
-    section {
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section:last-child { border-bottom: none; }
-
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-faint);
-      margin-bottom: 1.8rem;
-    }
-
-    /* ── GRID ──────────────────────────────────────────────────── */
-    .grid { display: grid; gap: 1.5rem; }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-
-    @media (max-width: 900px) {
-      .grid-3, .grid-2 { grid-template-columns: 1fr; }
-    }
-
-    /* ── CARD ──────────────────────────────────────────────────── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 1.6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      transition: border-color 0.2s ease;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .card:hover { border-color: var(--amber-dim); }
-    a.card { cursor: pointer; }
-
-    .card-num {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      color: var(--amber-dim);
-      text-transform: uppercase;
-    }
-
-    .card-title {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.3;
-    }
-
-    .card-domain {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      letter-spacing: 0.05em;
-    }
-
-    /* GLASS TOP — always sharp, always visible */
-    .card-finding {
-      font-family: var(--serif);
-      font-size: 0.92rem;
-      font-style: italic;
-      color: var(--text);
-      line-height: 1.52;
-      margin-top: 0.25rem;
-    }
-
-    /* CARD BODY — behind the frost */
-    .card-body {
-      filter: blur(1.2px);
-      opacity: 0.42;
-      transition: filter 0.22s ease, opacity 0.22s ease;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 0.2rem;
-    }
-
-    .card:hover .card-body {
-      filter: blur(0px);
-      opacity: 1;
-    }
-
-    .card-desc {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      line-height: 1.55;
-      flex: 1;
-    }
-
-    .card-status {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.55rem;
-      border: 1px solid;
-      margin-top: 0.4rem;
-      align-self: flex-start;
-    }
-
-    .status-active { color: var(--amber);      border-color: var(--amber-dim); }
-    .status-coming { color: var(--text-faint); border-color: var(--text-faint); }
-    .status-live   { color: #6aaa7a;           border-color: #3d6b49; }
-    .status-dev    { color: var(--amber-dim);  border-color: var(--text-faint); }
-
-    .card-link {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--text-dim);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-
-    .card-link::after { content: ' →'; color: var(--amber-dim); }
-
-    /* ── FOOTER ────────────────────────────────────────────────── */
-    footer {
-      padding: 2rem 4rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-about {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      max-width: 540px;
-      line-height: 1.55;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.8rem;
-    }
-
-    .footer-links a {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .footer-links a:hover { color: var(--amber); }
-
-    @media (max-width: 700px) {
-      header { flex-direction: column; gap: 2rem; }
-      header, main, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-      h1 { font-size: 2rem; }
-      .currently { flex-direction: column; gap: 0.8rem; }
-      .header-nav { gap: 1.4rem; }
-    }
-  </style>
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="header-left">
-      <div class="wordmark">llUll <span class="wordmark-studio">studio</span></div>
-      <h1>Instruments for <em>clarity.</em></h1>
-      <p class="tagline">The work is the instrument, not the opinion.</p>
-    </div>
-    <nav class="header-nav">
-      <a href="gallery.html" class="coming">Gallery</a>
-      <a href="map.html" class="coming">Map</a>
-      <a href="https://rllull.substack.com" target="_blank" rel="noopener">Substack</a>
-    </nav>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="wordmark">llUll press</div>
+    <div class="seat">St.&nbsp;Augustine, Florida</div>
   </header>
 
   <main>
 
-    <!-- CURRENTLY — update manually when a new piece ships -->
-    <section>
-      <div class="currently">
-        <span class="currently-tag">Currently</span>
-        <div>
-          <a class="currently-title" href="https://rllull.substack.com/p/the-cuckoo-protocol" target="_blank" rel="noopener">The Cuckoo Protocol</a>
-          <p class="currently-finding">
-            How franchises eat their own mythic core — and teach the audience not to trust the uniform.
-          </p>
-          <p class="currently-meta">
-            Study 02 · Cognitive Cellar · <a href="https://rllull.substack.com/p/the-cuckoo-protocol" target="_blank" rel="noopener">rllull.substack.com →</a>
-          </p>
+    <article class="book">
+
+      <figure class="jacket">
+        <img src="cover.jpg"
+             width="900" height="1416"
+             fetchpriority="high"
+             alt="Cover of The Lyon Building: A Corner In History — a watercolor of the building on King Street, St. Augustine, by Dick Weaver.">
+        <figcaption>Cover: The Lyon Building, King Street. Watercolor by Dick&nbsp;Weaver.</figcaption>
+      </figure>
+
+      <div class="detail">
+        <p class="eyebrow">First edition</p>
+        <h1 class="title">The Lyon Building</h1>
+        <p class="subtitle">A Corner In History</p>
+        <p class="byline">A. E. Martinez</p>
+
+        <div class="blurb">
+          <p>Built in 1886 at the corner of King and St. George Streets, a block from a plaza laid out in 1573. Franklin W. Smith cast it from Portland cement and crushed coquina shell, poured into wooden forms, at a time when almost everything around it was made of wood. Neighbors called it a jail, a fort, anything but what it was, because what it was did not yet have a name.</p>
+
+          <p>In February 1939 a fire started in a dry cleaner on the upper floors and burned for hours. It would have leveled a wooden commercial block in one. When firefighters drilled through the floors to drain the water, they found them packed with crushed shell. The building performed exactly as its builders had promised fifty-two years earlier.</p>
+
+          <p class="pull">They were right about the corner. They had no idea about the forever.</p>
+
+          <p>This is the story of that corner, across six eras: the material that changed Florida's built environment, the bazaars and the palmist on the ground floor, the fire, the thirty thousand tiles a man named Bernhard spent three decades setting and vandals stripped in two, and the afternoon in 1964 when a mob attacked Andrew Young at the intersection outside. The building did not choose to be there. It was simply still there.</p>
         </div>
+
+        <div class="buy">
+          <a class="btn" href="https://www.blurb.com/b/12895789-the-lyon-building">
+            Buy from Blurb <span class="price">$16.75</span>
+          </a>
+          <span class="stock">Printed to order. Ships from Blurb.</span>
+        </div>
+
+        <ul class="specs">
+          <li>Softcover</li>
+          <li>5 × 8 in</li>
+          <li>60 pages</li>
+          <li>Published May 2026</li>
+          <li>ISBN 979-8-234-10396-3</li>
+        </ul>
+      </div>
+
+    </article>
+
+    <section class="claims">
+      <div class="claim">
+        <p class="eyebrow">The material claim</p>
+        <h2>It is the oldest surviving poured-concrete commercial building in St.&nbsp;Augustine's historic district.</h2>
+        <p>The first of its kind in Florida. Smith had watched a chateau go up in wooden forms at Vevay on Lake Geneva and understood that the Moorish grandeur he wanted did not require artisans, only a mold. The coquina-aggregate formula he proved here became the material vocabulary for everything Flagler built after 1888. The Lyon Building was the proof of concept. The grand hotels were the finished product.</p>
+      </div>
+
+      <div class="claim">
+        <p class="eyebrow">The living claim</p>
+        <h2>Every other Franklin W. Smith building in St.&nbsp;Augustine became an institution. This one is a home.</h2>
+        <p>A museum, a school, a hotel. The Lyon Building is the only one that is still, in the most basic sense, where people live. Smith spent more than he made on ideas the country was not ready for and died in 1911 with little to show for them. The building kept appreciating without him. A building is an argument made in material, and this one has not been refuted.</p>
       </div>
     </section>
 
-    <!-- Imprints -->
-    <section>
-      <div class="section-label">Imprints</div>
-      <div class="grid grid-3">
-
-        <a class="card" href="https://rllull.substack.com" target="_blank" rel="noopener">
-          <div class="card-num">I</div>
-          <div class="card-title">Cognitive Cellar</div>
-          <div class="card-domain">Analytical instruments · R. Llull</div>
-          <p class="card-finding">The instrument doesn't care what you believe. It scores what you do.</p>
-          <div class="card-body">
-            <p class="card-desc">
-              Scored studies, dispositional profiling, and the Terroir methodology.
-              Applied to AI systems, ideological structures, institutions, and cultures.
-            </p>
-            <span class="card-status status-active">Active</span>
-            <span class="card-link">rllull.substack.com</span>
-          </div>
-        </a>
-
-        <div class="card">
-          <div class="card-num">II</div>
-          <div class="card-title">llUll press</div>
-          <div class="card-domain">Print publishing</div>
-          <p class="card-finding">Titles that reward slow reading and physical form.</p>
-          <div class="card-body">
-            <p class="card-desc">
-              Print-first imprint. Heritage projects, limited editions, posters.
-              The Lyon Building. Books that require the object.
-            </p>
-            <span class="card-status status-coming">Coming</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-num">III</div>
-          <div class="card-title">studio oi</div>
-          <div class="card-domain">Image · video · photography · design</div>
-          <p class="card-finding">Same precision, different register.</p>
-          <div class="card-body">
-            <p class="card-desc">
-              Still image, moving image, and creative experiments.
-              Visual research running parallel to the analytical work.
-            </p>
-            <span class="card-status status-coming">Coming</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Instruments -->
-    <section>
-      <div class="section-label">Instruments</div>
-      <div class="grid grid-2">
-
-        <div class="card">
-          <div class="card-num">Engine of Utopia</div>
-          <div class="card-title">Ideological Transmission Map</div>
-          <div class="card-domain">Revolutionary collectivist firmware · 14 nodes · 5 eras</div>
-          <p class="card-finding">The mass death is not the failure state.</p>
-          <div class="card-body">
-            <p class="card-desc">
-              A scored transmission map tracing the same epistemic engine from
-              18th-century France through its modern instantiations.
-              These are not distinct ideologies. Same engine, different target variable.
-            </p>
-            <span class="card-status status-dev">In Development</span>
-          </div>
-        </div>
-
-        <a class="card" href="https://cognitivecellar.com" target="_blank" rel="noopener">
-          <div class="card-num">Kernl</div>
-          <div class="card-title">Cognitive Antivirus</div>
-          <div class="card-domain">Real-time epistemic threat detection</div>
-          <p class="card-finding">Detects structural manipulation regardless of truth value.</p>
-          <div class="card-body">
-            <p class="card-desc">
-              Scans content for structural manipulation mechanisms and extracts
-              the factual payload. Does not fact-check.
-              Strictly neutral: fires on left, right, and center equally.
-            </p>
-            <span class="card-status status-active">Active Build</span>
-            <span class="card-link">cognitivecellar.com</span>
-          </div>
-        </a>
-
-        <div class="card">
-          <div class="card-num">The Last Backup</div>
-          <div class="card-title">High-Fidelity Cognitive Encoding</div>
-          <div class="card-domain">Framework · Three-axis architecture · HAL Stack</div>
-          <p class="card-finding">Between the chatbot that sounds like your father and the connectome upload that <em>is</em> your father lies unexplored middle ground.</p>
-          <div class="card-body">
-            <p class="card-desc">
-              A modular encoding system for the generative machinery of a mind —
-              not what someone says, but how the cognition that produces the speech works.
-              Security A/B/C · HAL Stack 0–6 · Fidelity axis.
-            </p>
-            <span class="card-status status-dev">In Development</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-num">The Collector</div>
-          <div class="card-title">Dispositional Knowledge Filter</div>
-          <div class="card-domain">Personal knowledge acquisition · Validation-gated</div>
-          <p class="card-finding">The bottleneck being solved is saving too much, not finding too little.</p>
-          <div class="card-body">
-            <p class="card-desc">
-              A validation-gated knowledge ingestion system. Most captures are discarded.
-              User-authored dispositional axes score what survives.
-              The judge runs locally; the corpus lives anywhere.
-            </p>
-            <span class="card-status status-coming">Coming</span>
-          </div>
-        </div>
-
-      </div>
+    <section class="press">
+      <p class="eyebrow">The press</p>
+      <h2>llUll press publishes carefully researched works of history, architecture, and epistemology.</h2>
+      <p>With an emphasis on place and lived experience. Seated in St.&nbsp;Augustine, Florida.</p>
+      <p class="sources">Historical photography courtesy of the St. Augustine Historical Society, the Library of Congress, and private collections. Watercolors by Dick Weaver, reproduced with permission. Editorial assistance and research contributions by Pam Gray.</p>
     </section>
 
   </main>
 
   <footer>
-    <p class="footer-about">
-      R. Llull · St. Augustine, FL · Build the instruments, see who finds them.
-    </p>
-    <nav class="footer-links">
-      <a href="https://rllull.substack.com" target="_blank" rel="noopener">Substack</a>
-      <a href="https://cognitivecellar.com" target="_blank" rel="noopener">cognitivecellar.com</a>
-    </nav>
+    <span>llUll press · St.&nbsp;Augustine, Florida</span>
+    <span>© 2026 A. E. Martinez</span>
   </footer>
+
+</div>
 
 </body>
 </html>

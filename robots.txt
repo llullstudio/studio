@@ -1,5 +1,5 @@
-# llull.studio — indexing suppressed during build
-# Remove Disallow line and redeploy when site is launch-ready (Gallery + Map complete)
-
+# llull.studio — llUll press
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://llull.studio/sitemap.xml
