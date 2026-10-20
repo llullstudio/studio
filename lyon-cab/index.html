@@ -63,14 +63,15 @@ dd{margin:0;color:var(--cream)}
 #panel.open{transform:none}
 #panel.dragging{transition:none}
 #panel .pbody{height:100%;box-sizing:border-box;background:rgba(23,15,7,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-right:1px solid var(--line);padding:calc(14px + env(safe-area-inset-top,0px)) 14px 16px max(14px,env(safe-area-inset-left,0px));overflow:auto}
-#panelHandle{position:absolute;left:100%;top:calc(12px + env(safe-area-inset-top,0px));width:36px;height:60px;margin-left:-1px;display:flex;align-items:center;justify-content:center;gap:5px;background:rgba(23,15,7,.94);border:1px solid var(--line);border-left:0;border-radius:0 4px 4px 0;color:var(--brass);font:600 18px var(--body);cursor:grab;touch-action:none;padding:0;-webkit-user-select:none;user-select:none}
+#panelHandle{position:absolute;z-index:1;left:calc(100% - 1px);top:calc(12px + env(safe-area-inset-top,0px));width:24px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(23,15,7,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-left:0;border-radius:0 12px 12px 0;color:var(--brass);font:600 16px var(--body);cursor:grab;touch-action:none;padding:0;-webkit-user-select:none;user-select:none}
 #panelHandle:active{cursor:grabbing}
+#panelHandle::before{content:"";position:absolute;inset:-6px -14px -6px 0}
 #panelHandle:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 #panelHandle .grip{width:2px;height:22px;border-left:1px solid var(--cream-dim);border-right:1px solid var(--cream-dim);opacity:.6}
 #panelHandle .chev{display:inline-block;transition:transform .22s ease}
 #panel.open #panelHandle .chev{transform:scaleX(-1)}
 #panelTab{display:none!important}
-.navcol .tocover{margin-top:2px;border-style:dashed}
+.navcol .tocover{margin-top:2px}
 @media (prefers-reduced-motion:reduce){#panel{transition:none}}
 .phead{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .xbtn{background:none;border:0;color:var(--cream-dim);font-size:22px;line-height:1;cursor:pointer;padding:2px 6px}
@@ -79,10 +80,10 @@ dd{margin:0;color:var(--cream)}
 .lbl{font-family:var(--display);font-size:10.5px;letter-spacing:.14em;color:var(--brass)}
 .lbl .val{font-family:var(--body);letter-spacing:0;font-size:12.5px;color:var(--cream);margin-left:6px}
 .seg{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
-.seg button{font:600 12px var(--body);color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:2px;padding:5px 9px;cursor:pointer}
+.seg button{font:600 12px var(--body);color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:0;padding:5px 9px;cursor:pointer}
 .seg button[aria-pressed="true"]{border-color:var(--brass);color:var(--brass)}
 .seg button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-.seg .swd{width:26px;height:26px;padding:0;border-radius:50%;border:2px solid rgba(241,237,230,.25)}
+.seg .swd{width:26px;height:26px;padding:0;border-radius:0;border:2px solid rgba(241,237,230,.25)}
 .seg .swd[aria-pressed="true"]{border-color:var(--brass);box-shadow:0 0 0 2px rgba(201,164,76,.35)}
 #panel .sub{margin-top:8px;font-size:12.5px;line-height:1.4}
 #panel details{max-width:none}
@@ -96,7 +97,7 @@ dd{margin:0;color:var(--cream)}
 .vdot[aria-pressed="true"] path{fill:var(--brass)}
 .vdot:focus-visible circle{stroke:var(--brass);stroke-width:4}
 .navcol{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
-.navcol button{font:600 12px var(--body);color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:2px;padding:6px 10px;cursor:pointer}
+.navcol button{font:600 12px var(--body);color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}
 .navcol button[aria-pressed="true"]{border-color:var(--brass);color:var(--brass)}
 .navcol .hint{font-size:11px;max-width:96px;line-height:1.3}
 .contact{margin-top:18px;padding-top:10px;border-top:1px solid var(--line);font-size:11px;color:var(--cream-dim)}
@@ -113,7 +114,7 @@ dd{margin:0;color:var(--cream)}
 #cover .cv-wip{margin-top:18px;font-size:14px;line-height:1.5;max-width:30em;color:#5b4a38}
 #cover .cv-team{margin-top:28px;font-size:14px;line-height:1.6}
 #cover .cv-k{font-size:11px;letter-spacing:.16em}
-#cover .cv-go{margin-top:30px;align-self:flex-start;font:600 15px "Avenir Next","Avenir","Segoe UI",system-ui,sans-serif;letter-spacing:.06em;color:#f1ede6;background:#2a1a0a;border:0;border-radius:2px;padding:12px 22px;cursor:pointer}
+#cover .cv-go{margin-top:30px;align-self:flex-start;font:600 15px "Avenir Next","Avenir","Segoe UI",system-ui,sans-serif;letter-spacing:.06em;color:#f1ede6;background:#2a1a0a;border:0;border-radius:999px;padding:12px 26px;cursor:pointer}
 #cover .cv-go:hover{background:#3d2814}
 #cover .cv-go:disabled{opacity:.55;cursor:default}
 #cover .cv-load{margin-top:12px;font-size:13px;color:#5b4a38;display:flex;align-items:center;gap:10px}
@@ -137,7 +138,7 @@ dd{margin:0;color:var(--cream)}
 .lobbybar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:10px max(16px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px))}
 .lobbybar .seg{margin-top:0}
 .lobbybar .cap{font-size:11.5px;color:var(--cream-dim);flex-basis:100%;margin-top:4px}
-.lbtn{font:600 13px var(--body);border:1px solid var(--line);border-radius:2px;padding:7px 12px;color:var(--cream);background:none;cursor:pointer}
+.lbtn{font:600 13px var(--body);border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--cream);background:none;cursor:pointer}
 .lbtn.primary{border-color:var(--brass);color:#1a1008;background:var(--brass)}
 .lbtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .lbar-sep{width:1px;align-self:stretch;background:var(--line);margin:0 4px}
@@ -166,7 +167,7 @@ dd{margin:0;color:var(--cream)}
 
 <button type="button" id="panelTab" aria-controls="panel" aria-expanded="false"><span aria-hidden="true">☰</span><span class="sum" id="tabSum">Options</span></button>
 <aside id="panel" class="open" aria-label="Cab options">
-  <button type="button" id="panelHandle" aria-controls="panelBody" aria-expanded="true" aria-label="Show or hide the options"><span class="grip" aria-hidden="true"></span><span class="chev" aria-hidden="true">›</span></button>
+  <button type="button" id="panelHandle" aria-controls="panelBody" aria-expanded="true" aria-label="Show or hide the options"><span class="chev" aria-hidden="true">›</span></button>
   <div class="pbody" id="panelBody">
   <div class="phead"><div class="eyebrow">THE LYON BUILDING · ELEVATOR CAB</div></div>
   <h1 id="optTitle" hidden></h1>
@@ -180,7 +181,7 @@ dd{margin:0;color:var(--cream)}
   <div class="row" id="ceilWrap"><div class="lbl">CEILING</div><div class="seg" role="group" aria-label="Ceiling"><button type="button" data-ceil="m" aria-pressed="true">Wood moldings</button><button type="button" data-ceil="d" aria-pressed="false">Black reveals (in contract)</button></div></div>
   <details class="row" id="key"><summary>What's in it</summary><dl id="spec"></dl><p class="note" id="caveat"></p></details>
   <div class="dims">Estimated 68″ W × 54″ D × 94″ H · not for ordering</div>
-  <div class="contact">Questions: Tony Martinez · <a href="mailto:conceptblue@gmail.com">conceptblue@gmail.com</a><br><button type="button" class="linkbtn" id="toCover">Back to the cover</button></div>
+  <div class="contact">Questions: Tony Martinez · <a href="mailto:conceptblue@gmail.com">conceptblue@gmail.com</a></div>
   </div>
 </aside>
 
@@ -192,7 +193,7 @@ dd{margin:0;color:var(--cream)}
     <g id="planDots"></g>
   </svg>
   <div class="navcol">
-    <button type="button" class="tocover" id="navCover">Cover page</button>
+    <button type="button" class="tocover" id="navCover">← Cover page</button>
     <button type="button" id="cabView" aria-pressed="true">Cab view</button>
     <button type="button" data-view="ceiling">Ceiling view</button>
     <div class="hint">Tap a dot to stand there. Drag to look around.</div>
@@ -201,10 +202,10 @@ dd{margin:0;color:var(--cream)}
 
 <div id="lobby" hidden role="dialog" aria-label="First-floor elevator door, from the lobby">
   <canvas id="lobbyCanvas"></canvas>
-  <button type="button" id="doorHint" hidden>Tap the door to go inside</button>
+  <button type="button" id="doorHint" hidden>Tap the door to go inside ↓</button>
   <div class="lobbybar">
-    <button type="button" class="lbtn" id="lobbyCover">Cover page</button>
-    <button type="button" class="lbtn primary" id="lobbyIn">Inside the cab</button>
+    <button type="button" class="lbtn" id="lobbyCover">← Cover page</button>
+    <button type="button" class="lbtn primary" id="lobbyIn">↑ Inside the cab</button>
     <span class="lbar-sep" aria-hidden="true"></span>
     <div class="seg" role="group" aria-label="Door finish">
       <button type="button" data-door="asis" aria-pressed="true">As it is</button>
@@ -216,6 +217,6 @@ dd{margin:0;color:var(--cream)}
 </div>
 
 <div id="stageDummy" hidden></div>
-<script type="module" src="app.js?v=23"></script>
+<script type="module" src="app.js?v=24"></script>
 
 </html>
