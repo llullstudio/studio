@@ -136,7 +136,8 @@ dd{margin:0;color:var(--cream)}
 #lobby[hidden]{display:none}
 #lobbyCanvas{flex:1;min-height:0;width:100%;height:100%;object-fit:contain;display:block}
 .lobbybar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:10px max(16px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px))}
-.lobbybar .seg{margin-top:0}
+.lobbybar .seg{margin-top:0;align-items:center}
+.seglbl{font-size:12px;color:var(--cream-dim);margin:0 2px 0 8px}
 .lobbybar .cap{font-size:11.5px;color:var(--cream-dim);flex-basis:100%;margin-top:4px}
 .lbtn{font:600 13px var(--body);border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--cream);background:none;cursor:pointer}
 .lbtn.primary{border-color:var(--brass);color:#1a1008;background:var(--brass)}
@@ -179,6 +180,7 @@ dd{margin:0;color:var(--cream)}
   <div class="row" id="finWrap"><div class="lbl">LAMINATE<span class="val" id="finName"></span></div><div class="seg" id="fin" role="group" aria-label="Laminate"></div><div class="note">Approximate, from the catalog page</div></div>
   <div class="row" id="togWrap"><div class="lbl">OPTIONS</div><div class="seg" role="group" aria-label="Options"><button type="button" data-tog="mirrors" aria-pressed="false">Mirrors</button><button type="button" data-tog="plaque" aria-pressed="false">Plaque</button></div></div>
   <div class="row" id="ceilWrap"><div class="lbl">CEILING</div><div class="seg" role="group" aria-label="Ceiling"><button type="button" data-ceil="m" aria-pressed="true">Wood moldings</button><button type="button" data-ceil="d" aria-pressed="false">Black reveals (in contract)</button></div></div>
+  <div class="row" id="doorRow"><div class="lbl">CAB DOOR<span class="val" id="doorName">As it is</span></div><div class="note">Set at the lobby door, so both sides match</div></div>
   <details class="row" id="key"><summary>What's in it</summary><dl id="spec"></dl><p class="note" id="caveat"></p></details>
   <div class="dims">Estimated 68″ W × 54″ D × 94″ H · not for ordering</div>
   <div class="contact">Questions: Tony Martinez · <a href="mailto:conceptblue@gmail.com">conceptblue@gmail.com</a></div>
@@ -210,15 +212,16 @@ dd{margin:0;color:var(--cream)}
     <div class="seg" role="group" aria-label="Door finish">
       <button type="button" data-door="asis" aria-pressed="true">As it is</button>
       <button type="button" data-door="brass" aria-pressed="false">Refinished brass</button>
-      <button type="button" data-door="bronze" aria-pressed="false">Wrap, metallic bronze</button>
-      <button type="button" data-door="reeded" aria-pressed="false">Wrap, reeded bronze</button>
-      <button type="button" data-door="reededBrass" aria-pressed="false">Wrap, reeded brass</button>
+      <span class="seglbl" aria-hidden="true">Wrap:</span>
+      <button type="button" data-door="bronze" aria-pressed="false" aria-label="Wrap, bronze">Bronze</button>
+      <button type="button" data-door="reeded" aria-pressed="false" aria-label="Wrap, reeded bronze">Reeded bronze</button>
+      <button type="button" data-door="reededBrass" aria-pressed="false" aria-label="Wrap, reeded brass">Reeded brass</button>
     </div>
-    <div class="cap" id="lobbyCap">First-floor elevator door from the lobby, Tony's photo, 2026-10-20. Finishes are simulated on the photo's own light.</div>
+    <div class="cap" id="lobbyCap">First-floor elevator door from the lobby, Tony's photo, 2026-10-20. Finishes are simulated on the photo's own light. The finish you pick here is also shown on the cab door inside.</div>
   </div>
 </div>
 
 <div id="stageDummy" hidden></div>
-<script type="module" src="app.js?v=26"></script>
+<script type="module" src="app.js?v=27"></script>
 
 </html>
