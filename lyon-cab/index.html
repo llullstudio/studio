@@ -137,6 +137,15 @@ dd{margin:0;color:var(--cream)}
 .lobbybar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:10px max(16px,env(safe-area-inset-left,0px)) calc(12px + env(safe-area-inset-bottom,0px))}
 .lobbybar .seg{margin-top:0}
 .lobbybar .cap{font-size:11.5px;color:var(--cream-dim);flex-basis:100%;margin-top:4px}
+.lbtn{font:600 13px var(--body);border:1px solid var(--line);border-radius:2px;padding:7px 12px;color:var(--cream);background:none;cursor:pointer}
+.lbtn.primary{border-color:var(--brass);color:#1a1008;background:var(--brass)}
+.lbtn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.lbar-sep{width:1px;align-self:stretch;background:var(--line);margin:0 4px}
+#doorHint{position:absolute;z-index:1;transform:translate(-50%,-50%);font:600 14px var(--body);letter-spacing:.02em;color:#1a1008;background:rgba(232,203,132,.94);border:0;border-radius:999px;padding:9px 16px;cursor:pointer;box-shadow:0 2px 14px rgba(0,0,0,.45);white-space:nowrap;animation:hintpulse 2.4s ease-in-out infinite}
+#doorHint[hidden]{display:none}
+#doorHint:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@keyframes hintpulse{0%,100%{box-shadow:0 2px 14px rgba(0,0,0,.45),0 0 0 0 rgba(232,203,132,.55)}50%{box-shadow:0 2px 14px rgba(0,0,0,.45),0 0 0 10px rgba(232,203,132,0)}}
+@media (prefers-reduced-motion:reduce){#doorHint{animation:none}}
 </style>
 
 <div id="cover" role="dialog" aria-label="Elevator Design Explorer">
@@ -192,19 +201,21 @@ dd{margin:0;color:var(--cream)}
 
 <div id="lobby" hidden role="dialog" aria-label="First-floor elevator door, from the lobby">
   <canvas id="lobbyCanvas"></canvas>
+  <button type="button" id="doorHint" hidden>Tap the door to go inside</button>
   <div class="lobbybar">
-    <button type="button" class="xbtn" id="lobbyBack" style="font:600 13px var(--body);border:1px solid var(--line);border-radius:2px;padding:6px 10px;color:var(--cream)">← Back inside</button>
-    <button type="button" class="xbtn" id="lobbyCover" style="font:600 13px var(--body);border:1px dashed var(--line);border-radius:2px;padding:6px 10px;color:var(--cream)">Cover page</button>
+    <button type="button" class="lbtn" id="lobbyCover">Cover page</button>
+    <button type="button" class="lbtn primary" id="lobbyIn">Inside the cab</button>
+    <span class="lbar-sep" aria-hidden="true"></span>
     <div class="seg" role="group" aria-label="Door finish">
       <button type="button" data-door="asis" aria-pressed="true">As it is</button>
       <button type="button" data-door="brass" aria-pressed="false">Refinished brass</button>
       <button type="button" data-door="bronze" aria-pressed="false">Wrap, metallic bronze</button>
     </div>
-    <div class="cap" id="lobbyCap">Click the door to step inside. First-floor elevator door from the lobby, Tony's photo, 2026-10-20. Finishes are simulated on the photo's own light.</div>
+    <div class="cap" id="lobbyCap">First-floor elevator door from the lobby, Tony's photo, 2026-10-20. Finishes are simulated on the photo's own light.</div>
   </div>
 </div>
 
 <div id="stageDummy" hidden></div>
-<script type="module" src="app.js?v=22"></script>
+<script type="module" src="app.js?v=23"></script>
 
 </html>
