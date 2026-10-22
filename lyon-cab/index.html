@@ -124,6 +124,8 @@ dd{margin:0;color:var(--cream)}
 #cover .cv-bar::after{content:"";position:absolute;top:0;bottom:0;width:40%;background:#2a1a0a;animation:cvload 1.1s ease-in-out infinite}
 @keyframes cvload{0%{left:-40%}100%{left:100%}}
 @media (prefers-reduced-motion:reduce){#cover .cv-bar::after{animation:none;left:0;width:100%;opacity:.4}}
+#cover .cv-retry{font:600 13px "Avenir Next","Avenir","Segoe UI",system-ui,sans-serif;color:#2a1a0a;background:none;border:1px solid #2a1a0a;border-radius:999px;padding:5px 14px;cursor:pointer}
+#cover .cv-fail{color:#7a2e1a}
 #cover .cv-go:focus-visible{outline:2px solid #C9A44C;outline-offset:3px}
 #cover .cv-contact{margin-top:auto;padding-top:28px;font-size:14px;line-height:1.5}
 #cover .cv-contact a{color:inherit;text-decoration:none}
@@ -227,6 +229,26 @@ dd{margin:0;color:var(--cream)}
 </div>
 
 <div id="stageDummy" hidden></div>
-<script type="module" src="app.js?v=35"></script>
+<script>
+/* if the 3D can't start, say so on the cover with a Reload button instead of loading forever (2026-10-21) */
+(function(){
+  var shown=false;
+  function fail(why){
+    if(shown)return;shown=true;
+    var l=document.getElementById('coverLoad');if(!l)return;
+    l.hidden=false;l.textContent='';
+    var t=document.createElement('span');t.className='cv-fail';
+    t.textContent='The 3D cab didn\u2019t start'+(why?' ('+why+')':'')+'. Reload the page. If it sticks again, quit and reopen the browser. ';
+    var b=document.createElement('button');b.type='button';b.className='cv-retry';b.textContent='Reload';
+    b.addEventListener('click',function(){location.reload()});
+    l.appendChild(t);l.appendChild(b);
+  }
+  window.__coverFail=fail;
+  window.addEventListener('error',function(e){fail(e&&e.message?e.message:'a script error')});
+  window.addEventListener('unhandledrejection',function(e){fail(e&&e.reason&&e.reason.message?e.reason.message:'a script error')});
+  setTimeout(function(){var g=document.getElementById('coverGo');if(g&&g.disabled)fail('still loading after 40 seconds')},40000);
+})();
+</script>
+<script type="module" src="app.js?v=36"></script>
 
 </html>
