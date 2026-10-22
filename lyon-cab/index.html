@@ -246,9 +246,9 @@ dd{margin:0;color:var(--cream)}
   window.__coverFail=fail;
   window.addEventListener('error',function(e){fail(e&&e.message?e.message:'a script error')});
   window.addEventListener('unhandledrejection',function(e){fail(e&&e.reason&&e.reason.message?e.reason.message:'a script error')});
-  setTimeout(function(){var g=document.getElementById('coverGo');if(g&&g.disabled)fail('still loading after 40 seconds')},40000);
+  setTimeout(function(){var g=document.getElementById('coverGo');if(g&&g.disabled)fail('still loading after 40 seconds; reached: '+(window.__stage||'the 3D script never arrived'))},40000);
 })();
 </script>
-<script type="module" src="app.js?v=36"></script>
+<script type="module" src="app.js?v=37" onerror="window.__coverFail&&window.__coverFail('the 3D script did not download')"></script>
 
 </html>
