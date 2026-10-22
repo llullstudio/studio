@@ -157,7 +157,7 @@ dd{margin:0;color:var(--cream)}
     <h2>THE LYON BUILDING</h2>
     <div class="cv-sub">Elevator Design Explorer</div>
     <div class="cv-pitch">The elevator pitch</div>
-    <p class="cv-lede">Start in the lobby at the first-floor door and compare finishes. Then step inside the cab as it is today, switch to the proposed new interior, and try the choices still open: the wood finish, mirrors, the water elevator plaque, and the ceiling.</p>
+    <p class="cv-lede">Start in the lobby at the first-floor door and compare finishes. Then step inside the cab as it is today, switch between the two proposed interiors, and try the choices still open: the wood finish, mirrors, the water elevator plaque, the ceiling, and the metal of the reveals.</p>
     <p class="cv-wip">Work in progress. The finishes shown are samples we picked, not decisions. Any other material or layout can be added to try it out. Sizes are estimates until the cab is measured.</p>
     <div class="cv-team"><div class="cv-k">ELEVATOR COMMITTEE</div>Pam, Tony, Jill and Donna</div>
     <button class="cv-go" type="button" id="coverGo" disabled>Open the explorer</button>
@@ -176,12 +176,14 @@ dd{margin:0;color:var(--cream)}
   <h1 id="optTitle" hidden></h1>
   <div class="seg" role="group" aria-label="Cab">
     <button type="button" data-opt="today" aria-pressed="false">Today</button>
-    <button type="button" data-opt="a" aria-pressed="true">Proposed</button>
+    <button type="button" data-opt="a" aria-pressed="true">M14 wood frames</button>
+    <button type="button" data-opt="q7" aria-pressed="false">Q7 panels</button>
   </div>
   <div class="sub" id="optSub"></div>
   <div class="row" id="finWrap"><div class="lbl">LAMINATE<span class="val" id="finName"></span></div><div class="seg" id="fin" role="group" aria-label="Laminate"></div><div class="note">Approximate, from the catalog page</div></div>
   <div class="row" id="togWrap"><div class="lbl">OPTIONS</div><div class="seg" role="group" aria-label="Options"><button type="button" data-tog="mirrors" aria-pressed="false">Mirrors</button><button type="button" data-tog="plaque" aria-pressed="false">Plaque</button></div></div>
   <div class="row" id="ceilWrap"><div class="lbl">CEILING</div><div class="seg" role="group" aria-label="Ceiling"><button type="button" data-ceil="m" aria-pressed="true">Wood moldings</button><button type="button" data-ceil="d" aria-pressed="false">Black reveals (in contract)</button></div></div>
+  <div class="row" id="metWrap" hidden><div class="lbl">REVEALS<span class="val" id="metName">Brass</span></div><div class="seg" role="group" aria-label="Reveal metal"><button type="button" data-met="brass" aria-pressed="true">Brass</button><button type="button" data-met="stainless" aria-pressed="false">Brushed stainless</button></div><div class="note">Brass assumed for now; Pam is confirming with QCab</div></div>
   <div class="row" id="doorRow"><div class="lbl">CAB DOOR<span class="val" id="doorName">As it is</span></div><div class="note">Set at the lobby door, so both sides match</div></div>
   <details class="row" id="key"><summary>What's in it</summary><dl id="spec"></dl><p class="note" id="caveat"></p></details>
   <div class="dims">Estimated 68″ W × 54″ D × 94″ H · not for ordering</div>
@@ -225,6 +227,6 @@ dd{margin:0;color:var(--cream)}
 </div>
 
 <div id="stageDummy" hidden></div>
-<script type="module" src="app.js?v=34"></script>
+<script type="module" src="app.js?v=35"></script>
 
 </html>
