@@ -249,6 +249,15 @@ dd{margin:0;color:var(--cream)}
   setTimeout(function(){var g=document.getElementById('coverGo');if(g&&g.disabled)fail('still loading after 40 seconds; reached: '+(window.__stage||'the 3D script never arrived'))},40000);
 })();
 </script>
-<script type="module" src="app.js?v=38" onerror="window.__coverFail&&window.__coverFail('the 3D script did not download')"></script>
+<script>
+/* load the 3D script; retry twice with a fresh URL, then report what the server said (2026-10-23) */
+(function(){var V='39',n=0;
+  function report(){fetch('app.js?v='+V+'&probe='+Date.now(),{cache:'no-store'}).then(function(r){
+      window.__coverFail&&window.__coverFail('the 3D script did not download: '+(r.ok?'it downloads but would not start':'server said '+r.status))
+    },function(e){window.__coverFail&&window.__coverFail('the 3D script did not download: network error')})}
+  function load(){var s=document.createElement('script');s.type='module';s.src='app.js?v='+V+(n?'&r='+Date.now():'');
+    s.onerror=function(){s.remove();if(++n<3)setTimeout(load,800*n);else report()};document.body.appendChild(s)}
+  load()})();
+</script>
 
 </html>
