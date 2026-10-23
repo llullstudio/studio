@@ -185,7 +185,7 @@ dd{margin:0;color:var(--cream)}
   <div class="row" id="finWrap"><div class="lbl">LAMINATE<span class="val" id="finName"></span></div><div class="seg" id="fin" role="group" aria-label="Laminate"></div><div class="note">Approximate, from the catalog page</div></div>
   <div class="row" id="togWrap"><div class="lbl">OPTIONS</div><div class="seg" role="group" aria-label="Options"><button type="button" data-tog="mirrors" aria-pressed="false">Mirrors</button><button type="button" data-tog="plaque" aria-pressed="false">Plaque</button></div></div>
   <div class="row" id="ceilWrap"><div class="lbl">CEILING</div><div class="seg" role="group" aria-label="Ceiling"><button type="button" data-ceil="m" aria-pressed="true">Wood moldings</button><button type="button" data-ceil="d" aria-pressed="false">Black reveals (in contract)</button></div></div>
-  <div class="row" id="metWrap" hidden><div class="lbl">REVEALS<span class="val" id="metName">Brass</span></div><div class="seg" role="group" aria-label="Reveal metal"><button type="button" data-met="brass" aria-pressed="true">Brass</button><button type="button" data-met="stainless" aria-pressed="false">Brushed stainless</button></div><div class="note">Brass assumed for now; Pam is confirming with QCab</div></div>
+  <div class="row" id="metWrap" hidden><div class="lbl">REVEALS<span class="val" id="metName">Brass</span></div><div class="seg" role="group" aria-label="Reveal metal"><button type="button" data-met="brass" aria-pressed="true">Brass</button><button type="button" data-met="stainless" aria-pressed="false">Brushed stainless</button></div><div class="note">Brass confirmed available by QCab (Pam, 10/23)</div></div>
   <div class="row" id="doorRow"><div class="lbl">CAB DOOR<span class="val" id="doorName">As it is</span></div><div class="note">Set at the lobby door, so both sides match</div></div>
   <details class="row" id="key"><summary>What's in it</summary><dl id="spec"></dl><p class="note" id="caveat"></p></details>
   <div class="dims">Estimated 68″ W × 54″ D × 94″ H · not for ordering</div>
@@ -249,6 +249,6 @@ dd{margin:0;color:var(--cream)}
   setTimeout(function(){var g=document.getElementById('coverGo');if(g&&g.disabled)fail('still loading after 40 seconds; reached: '+(window.__stage||'the 3D script never arrived'))},40000);
 })();
 </script>
-<script type="module" src="app.js?v=37" onerror="window.__coverFail&&window.__coverFail('the 3D script did not download')"></script>
+<script type="module" src="app.js?v=38" onerror="window.__coverFail&&window.__coverFail('the 3D script did not download')"></script>
 
 </html>
