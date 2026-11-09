@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Lyon Building · llUll press</title>
+<meta name="description" content="llUll press publishes carefully researched works of history, architecture, and epistemology. The Lyon Building: A Corner In History, by A. E. Martinez.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fdfcfa'/%3E%3Crect x='6' y='5' width='20' height='22' fill='none' stroke='%23b9644b' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://llull.studio/the-lyon-building/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="llUll press">
+<meta property="og:title" content="The Lyon Building · llUll press">
+<meta property="og:description" content="The Lyon Building: A Corner In History. Built 1886 in St. Augustine, Florida, of poured concrete when the rest of the city was wood.">
+<meta property="og:url" content="https://llull.studio/the-lyon-building/">
+<meta property="og:image" content="https://llull.studio/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* ──────────────────────────────────────────────────────────────
+   llUll press — llull.studio
+   Type and colour taken from the book itself: Libre Baskerville,
+   terracotta from the Lyon Building identity system.
+   Deliberately single-theme. This is a printed page, not an app.
+   ────────────────────────────────────────────────────────────── */
+
+:root{
+  --paper:      #fdfcfa;
+  --paper-2:    #f6f3ee;
+  --ink:        #1a1613;
+  --ink-mid:    #4a423c;
+  --ink-soft:   #8a8078;
+  --terracotta: #b9644b;
+  --terracotta-deep: #9c4d36;
+  --burgundy:   #69322d;
+  --rule:       rgba(26,22,19,.14);
+  --rule-soft:  rgba(26,22,19,.08);
+  --serif: 'Libre Baskerville', 'Baskerville', 'Georgia', serif;
+  --measure: 34em;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{font-size:16px;-webkit-text-size-adjust:100%}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.0625rem;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+a{color:var(--terracotta-deep);text-decoration:none;border-bottom:1px solid rgba(185,100,75,.35)}
+a:hover{border-bottom-color:var(--terracotta-deep)}
+a:focus-visible{outline:2px solid var(--terracotta-deep);outline-offset:3px;border-radius:1px}
+
+.wrap{
+  max-width:64rem;
+  margin:0 auto;
+  padding:0 clamp(1.35rem,5vw,3rem);
+}
+
+/* ── eyebrow ─────────────────────────────────────────────── */
+.eyebrow{
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--terracotta);
+  line-height:1.6;
+}
+
+/* ── masthead ────────────────────────────────────────────── */
+.masthead{
+  padding:clamp(2.25rem,5vw,3.5rem) 0 clamp(1.75rem,4vw,2.5rem);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:.35rem 2rem;
+  border-bottom:1px solid var(--rule);
+}
+.wordmark{
+  font-size:1.3rem;
+  font-weight:700;
+  letter-spacing:.005em;
+  color:var(--ink);
+}
+.seat{
+  font-size:.82rem;
+  font-style:italic;
+  color:var(--ink-soft);
+}
+
+/* ── hero ────────────────────────────────────────────────── */
+.book{
+  display:grid;
+  grid-template-columns:minmax(0,17rem) minmax(0,1fr);
+  gap:clamp(2rem,5vw,4.5rem);
+  align-items:start;
+  padding:clamp(2.75rem,6vw,4.5rem) 0 clamp(2.5rem,5vw,3.75rem);
+}
+
+.jacket{margin:0}
+.jacket img{
+  display:block;
+  width:100%;
+  height:auto;
+  background:var(--paper-2);
+  box-shadow:
+    0 0 0 1px rgba(26,22,19,.10),
+    0 1px 1px rgba(26,22,19,.06),
+    0 14px 34px -16px rgba(26,22,19,.34);
+}
+.jacket figcaption{
+  margin-top:.9rem;
+  font-size:.76rem;
+  font-style:italic;
+  line-height:1.55;
+  color:var(--ink-soft);
+}
+
+.title{
+  font-size:clamp(1.95rem,5.2vw,2.9rem);
+  font-weight:700;
+  line-height:1.12;
+  letter-spacing:.005em;
+  text-transform:uppercase;
+  margin:.65rem 0 .3rem;
+  text-wrap:balance;
+}
+.subtitle{
+  font-size:clamp(1.1rem,2.6vw,1.45rem);
+  font-style:italic;
+  color:var(--terracotta);
+  line-height:1.35;
+  margin-bottom:.15rem;
+}
+.byline{
+  font-size:.95rem;
+  color:var(--ink-mid);
+  margin-top:1.15rem;
+  padding-top:1.15rem;
+  border-top:1px solid var(--rule-soft);
+}
+
+.blurb{
+  max-width:var(--measure);
+  margin-top:1.5rem;
+}
+.blurb p + p{margin-top:1.15rem}
+
+.pull{
+  font-style:italic;
+  color:var(--burgundy);
+  font-size:1.12rem;
+  line-height:1.6;
+  margin:1.5rem 0;
+  padding-left:1.1rem;
+  border-left:2px solid var(--terracotta);
+}
+
+/* ── buy ─────────────────────────────────────────────────── */
+.buy{
+  margin-top:2rem;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:1rem 1.35rem;
+}
+.btn{
+  display:inline-flex;
+  align-items:baseline;
+  gap:.7rem;
+  background:var(--terracotta-deep);
+  color:var(--paper);
+  border:none;
+  padding:.92rem 1.5rem;
+  font-family:var(--serif);
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition:background .16s ease;
+}
+.btn:hover{background:var(--burgundy);border-bottom-color:transparent}
+.btn .price{
+  font-size:.86rem;
+  letter-spacing:.02em;
+  text-transform:none;
+  opacity:.92;
+}
+.stock{
+  font-size:.82rem;
+  font-style:italic;
+  color:var(--ink-soft);
+}
+
+.specs{
+  margin-top:1.6rem;
+  font-size:.82rem;
+  line-height:1.9;
+  color:var(--ink-soft);
+  list-style:none;
+}
+.specs li{display:inline}
+.specs li + li::before{content:" · ";color:var(--rule)}
+
+/* ── claims ──────────────────────────────────────────────── */
+.claims{
+  border-top:1px solid var(--rule);
+  padding:clamp(2.5rem,5vw,3.5rem) 0 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));
+  gap:clamp(2rem,4vw,3.5rem);
+}
+.claim h2{
+  font-size:1.06rem;
+  font-weight:700;
+  line-height:1.35;
+  margin:.7rem 0 .65rem;
+}
+.claim p{color:var(--ink-mid);font-size:1rem;line-height:1.72}
+
+/* ── press ───────────────────────────────────────────────── */
+.press{
+  margin-top:clamp(3rem,6vw,4.5rem);
+  padding-top:clamp(2.25rem,4vw,3rem);
+  border-top:1px solid var(--rule);
+  max-width:var(--measure);
+}
+.press h2{
+  font-size:1.06rem;
+  font-weight:700;
+  margin:.7rem 0 .7rem;
+}
+.press p{color:var(--ink-mid);font-size:1rem}
+.press p + p{margin-top:1rem}
+.sources{
+  margin-top:1.35rem;
+  font-size:.86rem;
+  font-style:italic;
+  color:var(--ink-soft);
+  line-height:1.7;
+}
+
+/* ── footer ──────────────────────────────────────────────── */
+footer{
+  margin-top:clamp(3.25rem,6vw,5rem);
+  padding:1.5rem 0 3.5rem;
+  border-top:1px solid var(--rule);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:.4rem 2rem;
+  font-size:.8rem;
+  color:var(--ink-soft);
+}
+
+/* ── narrow ──────────────────────────────────────────────── */
+@media (max-width:46rem){
+  .book{grid-template-columns:1fr;gap:2.25rem}
+  .jacket{max-width:15rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="wordmark">llUll press</div>
+    <div class="seat">St.&nbsp;Augustine, Florida</div>
+  </header>
+
+  <main>
+
+    <article class="book">
+
+      <figure class="jacket">
+        <img src="/cover.jpg"
+             width="900" height="1416"
+             fetchpriority="high"
+             alt="Cover of The Lyon Building: A Corner In History — a watercolor of the building on King Street, St. Augustine, by Dick Weaver.">
+        <figcaption>Cover: The Lyon Building, King Street. Watercolor by Dick&nbsp;Weaver.</figcaption>
+      </figure>
+
+      <div class="detail">
+        <p class="eyebrow">First edition</p>
+        <h1 class="title">The Lyon Building</h1>
+        <p class="subtitle">A Corner In History</p>
+        <p class="byline">A. E. Martinez</p>
+
+        <div class="blurb">
+          <p>Built in 1886 at the corner of King and St. George Streets, a block from a plaza laid out in 1573. Franklin W. Smith cast it from Portland cement and crushed coquina shell, poured into wooden forms, at a time when almost everything around it was made of wood. Neighbors called it a jail, a fort, anything but what it was, because what it was did not yet have a name.</p>
+
+          <p>In February 1939 a fire started in a dry cleaner on the upper floors and burned for hours. It would have leveled a wooden commercial block in one. When firefighters drilled through the floors to drain the water, they found them packed with crushed shell. The building performed exactly as its builders had promised fifty-two years earlier.</p>
+
+          <p class="pull">They were right about the corner. They had no idea about the forever.</p>
+
+          <p>This is the story of that corner, across six eras: the material that changed Florida's built environment, the bazaars and the palmist on the ground floor, the fire, the thirty thousand tiles a man named Bernhard spent three decades setting and vandals stripped in two, and the afternoon in 1964 when a mob attacked Andrew Young at the intersection outside. The building did not choose to be there. It was simply still there.</p>
+        </div>
+
+        <div class="buy">
+          <a class="btn" href="https://www.blurb.com/b/12895789-the-lyon-building">
+            Buy from Blurb <span class="price">$16.75</span>
+          </a>
+          <span class="stock">Printed to order. Ships from Blurb.</span>
+        </div>
+
+        <ul class="specs">
+          <li>Softcover</li>
+          <li>5 × 8 in</li>
+          <li>60 pages</li>
+          <li>Published May 2026</li>
+          <li>ISBN 979-8-234-10396-3</li>
+        </ul>
+      </div>
+
+    </article>
+
+    <section class="claims">
+      <div class="claim">
+        <p class="eyebrow">The material claim</p>
+        <h2>It is the oldest surviving poured-concrete commercial building in St.&nbsp;Augustine's historic district.</h2>
+        <p>The first of its kind in Florida. Smith had watched a chateau go up in wooden forms at Vevay on Lake Geneva and understood that the Moorish grandeur he wanted did not require artisans, only a mold. The coquina-aggregate formula he proved here became the material vocabulary for everything Flagler built after 1888. The Lyon Building was the proof of concept. The grand hotels were the finished product.</p>
+      </div>
+
+      <div class="claim">
+        <p class="eyebrow">The living claim</p>
+        <h2>Every other Franklin W. Smith building in St.&nbsp;Augustine became an institution. This one is a home.</h2>
+        <p>A museum, a school, a hotel. The Lyon Building is the only one that is still, in the most basic sense, where people live. Smith spent more than he made on ideas the country was not ready for and died in 1911 with little to show for them. The building kept appreciating without him. A building is an argument made in material, and this one has not been refuted.</p>
+      </div>
+    </section>
+
+    <section class="press">
+      <p class="eyebrow">The press</p>
+      <h2>llUll press publishes carefully researched works of history, architecture, and epistemology.</h2>
+      <p>With an emphasis on place and lived experience. Seated in St.&nbsp;Augustine, Florida.</p>
+      <p class="sources">Historical photography courtesy of the St. Augustine Historical Society, the Library of Congress, and private collections. Watercolors by Dick Weaver, reproduced with permission. Editorial assistance and research contributions by Pam Gray.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>llUll press · St.&nbsp;Augustine, Florida · an imprint of <a href="/">llUll Studio</a></span>
+    <span>© 2026 A. E. Martinez</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
