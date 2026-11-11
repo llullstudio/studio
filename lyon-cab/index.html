@@ -160,11 +160,8 @@ dd{margin:0;color:var(--cream)}
     <div class="cv-sub">Elevator Design Explorer</div>
     <div class="cv-pitch">The elevator pitch</div>
     <p class="cv-lede">Start in the lobby at the first-floor door and compare finishes. Then step inside the cab as it is today, switch between the two proposed interiors, and try the choices still open: the wood finish, mirrors, the water elevator plaque, the ceiling, and the metal of the reveals.</p>
-    <p class="cv-wip">Work in progress. The finishes shown are samples we picked, not decisions. Any other material or layout can be added to try it out. Sizes are estimates until the cab is measured.</p>
-    <div class="cv-team"><div class="cv-k">ELEVATOR COMMITTEE</div>Pam, Tony, Jill and Donna</div>
     <button class="cv-go" type="button" id="coverGo" disabled>Open the explorer</button>
     <div class="cv-load" id="coverLoad" role="status"><span class="cv-bar" aria-hidden="true"></span><span>Loading the 3D cab. This can take 10 to 20 seconds on an iPad.</span></div>
-    <div class="cv-contact">Tony Martinez<br><a href="mailto:conceptblue@gmail.com">conceptblue@gmail.com</a></div>
   </div>
 </div>
 <div id="stage"></div>
@@ -251,7 +248,7 @@ dd{margin:0;color:var(--cream)}
 </script>
 <script>
 /* load the 3D script; retry twice with a fresh URL, then report what the server said (2026-10-23) */
-(function(){var V='40',n=0;
+(function(){var V='41',n=0;
   function report(){fetch('app.js?v='+V+'&probe='+Date.now(),{cache:'no-store'}).then(function(r){
       window.__coverFail&&window.__coverFail('the 3D script did not download: '+(r.ok?'it downloads but would not start':'server said '+r.status))
     },function(e){window.__coverFail&&window.__coverFail('the 3D script did not download: network error')})}
