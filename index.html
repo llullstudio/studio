@@ -44,14 +44,14 @@ a{color:inherit;text-decoration:none}
 .grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)}
 
 .tile{display:flex;flex-direction:column;gap:.15rem;outline:none}
-.media{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--paper-2);margin-bottom:1.1rem;
+.media{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--paper-2);margin-bottom:1.1rem;
   box-shadow:0 0 0 1px var(--rule-soft)}
 .media img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
 .tile:hover .media img,.tile:focus-visible .media img{transform:scale(1.025)}
 
 /* the book sits on a ground as an object, so every tile keeps the same frame */
 .media--book{background:linear-gradient(180deg,var(--paper-2),var(--paper-3))}
-.media--book img{position:absolute;top:8%;left:50%;width:auto;height:84%;object-fit:contain;transform:translateX(-50%);
+.media--book img{position:absolute;top:11%;left:50%;width:auto;height:78%;object-fit:contain;transform:translateX(-50%);
   box-shadow:0 0 0 1px rgba(26,22,19,.10),0 12px 26px -12px rgba(26,22,19,.38)}
 .tile:hover .media--book img,.tile:focus-visible .media--book img{transform:translateX(-50%) translateY(-3px)}
 
@@ -96,7 +96,7 @@ footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1p
 
       <a class="tile" href="/lyon-cab/">
         <div class="media">
-          <img src="/img/elevator.jpg" width="1200" height="800" loading="lazy" alt="Inside the Lyon Building elevator cab in 3D: wood paneling, brass rails, mirrored rear wall.">
+          <img src="/img/elevator.jpg" width="1000" height="1000" loading="lazy" alt="Inside the Lyon Building elevator cab in 3D: the water-elevator plaque on a wood panel, with brass rails and mirrors.">
         </div>
         <p class="eyebrow">The Lyon Building · 3D</p>
         <h2>Elevator Design Explorer</h2>
@@ -106,7 +106,7 @@ footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1p
 
       <a class="tile" href="/tarifa-lounge/">
         <div class="media">
-          <img src="/img/tarifa.jpg" width="1200" height="800" loading="lazy" alt="A 3D model of a loft lounge in Tarifa: brick floor, round rug, ottoman and cushions.">
+          <img src="/img/tarifa.jpg" width="1000" height="1000" loading="lazy" alt="A 3D model of a loft lounge in Tarifa: brick floor, round rug, ottoman and cushions.">
         </div>
         <p class="eyebrow">Tarifa, Spain · 3D</p>
         <h2>Tarifa Lounge</h2>
@@ -116,11 +116,11 @@ footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1p
 
       <a class="tile" href="/semantic-mirror/">
         <div class="media">
-          <img src="/img/semantic-mirror.jpg" width="1200" height="800" loading="lazy" alt="Semantic Mirror in a gallery: a gilt-framed piece with colored forms gathered above a field of small marks.">
+          <img src="/img/semantic-mirror.jpg" width="877" height="877" loading="lazy" alt="Semantic Mirror: a gilt baroque frame holding soft abstract forms in orange, purple and sage above a field of small marks.">
         </div>
         <p class="eyebrow">Installation · Proof of concept</p>
         <h2>Semantic Mirror</h2>
-        <p class="desc">A framed piece that reflects the gist of the conversation around it as slow, abstract forms, and weaves an exact, recoverable account of it into the image.</p>
+        <p class="desc">A framed artwork that listens to the room and reflects the gist of what's said as slowly evolving abstract forms. Freeze it, and the meaning can be read back from the image.</p>
         <span class="go">Watch the video</span>
       </a>
 
