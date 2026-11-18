@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Orcas Vortex · llUll Studio</title>
 <script data-goatcounter="https://llull.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<meta name="description" content="Orcas Vortex: four Spotify playlists, Late Night, Hypnotic, Relax and Lounge, with cover art made by hand during the pandemic years.">
+<meta name="description" content="Orcas Vortex: four Spotify playlists, Late Night, Hypnotic, Relax and Lounge, with original cover art from the pandemic years.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fdfcfa'/%3E%3Crect x='6' y='5' width='20' height='22' fill='none' stroke='%23b9644b' stroke-width='2.5'/%3E%3C/svg%3E">
 <link rel="canonical" href="https://llull.studio/orcas-vortex/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="llUll Studio">
 <meta property="og:title" content="Orcas Vortex">
-<meta property="og:description" content="Orcas Vortex: four Spotify playlists, Late Night, Hypnotic, Relax and Lounge, with cover art made by hand during the pandemic years.">
+<meta property="og:description" content="Orcas Vortex: four Spotify playlists, Late Night, Hypnotic, Relax and Lounge, with original cover art from the pandemic years.">
 <meta property="og:url" content="https://llull.studio/orcas-vortex/">
 <meta property="og:image" content="https://llull.studio/img/orcas-vortex.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -38,16 +38,17 @@ a:focus-visible{outline:2px solid var(--terracotta-deep);outline-offset:3px}
 .intro{padding:clamp(2.5rem,6vw,4rem) 0 0;max-width:36rem}
 .intro h1{font-size:clamp(1.9rem,4.6vw,2.7rem);font-weight:700;line-height:1.12;margin:.6rem 0 1.1rem}
 .intro p:not(.eyebrow){color:var(--ink-mid)}
-.covers{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,3vw,2.5rem);margin-top:clamp(2rem,5vw,3rem)}
+.covers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem);margin-top:clamp(2rem,5vw,3rem)}
 .cover{display:block;color:var(--ink)}
 .cover img{display:block;width:100%;height:auto;background:var(--paper-2);
   box-shadow:0 0 0 1px rgba(26,22,19,.10),0 16px 36px -18px rgba(26,22,19,.36);transition:transform .5s cubic-bezier(.2,.6,.2,1)}
 .cover:hover img,.cover:focus-visible img{transform:scale(1.02)}
 .label{display:block;margin-top:.8rem;font-size:.95rem}
-.label::after{content:" · Listen on Spotify ↗";font-size:.8rem;color:var(--terracotta-deep)}
+.line{display:block;margin-top:.2rem;font-size:.82rem;font-style:italic;color:var(--ink-mid);line-height:1.5}
+.listen{display:block;margin-top:.35rem;font-size:.75rem;color:var(--terracotta-deep)}
 footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1px solid var(--rule);
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 2rem;font-size:.8rem;color:var(--ink-soft)}
-@media (min-width:44rem){.covers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:44rem){.covers{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
 </style>
 </head>
@@ -62,25 +63,33 @@ footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1p
     <div class="intro">
       <p class="eyebrow">Orcas Island · Playlists</p>
       <h1>Orcas Vortex</h1>
-      <p>Four playlists for four moods, each with its own cover. The art was made by hand during the pandemic years: one Orcas Island shoreline, worked four different ways.</p>
+      <p>Four playlists for four moods, each with its own cover. The art dates from the pandemic years: one Orcas Island shoreline, worked four different ways.</p>
     </div>
 
     <div class="covers">
       <a class="cover" href="https://open.spotify.com/playlist/5Xcgnf1uIgNvB3P40etJsU" target="_blank" rel="noopener">
-        <img src="1-late-night.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 1, Late Night: hand-made cover art of an Orcas Island shoreline with a fence in the foreground.">
+        <img src="1-late-night.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 1, Late Night: cover art of an Orcas Island shoreline with a fence in the foreground.">
         <span class="label"><b>1</b> Late Night</span>
+        <span class="line">Songs to softly land the night.</span>
+        <span class="listen">Listen on Spotify ↗</span>
       </a>
       <a class="cover" href="https://open.spotify.com/playlist/7yfp5RZyPWc5dEdug2qe2k" target="_blank" rel="noopener">
-        <img src="2-hypnotic.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 2, Hypnotic: hand-made cover art of an Orcas Island shoreline with a fence in the foreground.">
+        <img src="2-hypnotic.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 2, Hypnotic: cover art of an Orcas Island shoreline with a fence in the foreground.">
         <span class="label"><b>2</b> Hypnotic</span>
+        <span class="line">Strange beats and eclectic textures full of energy.</span>
+        <span class="listen">Listen on Spotify ↗</span>
       </a>
       <a class="cover" href="https://open.spotify.com/playlist/56PsrLKfGJbfKLw73tTlaY" target="_blank" rel="noopener">
-        <img src="3-relax.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 3, Relax: hand-made cover art of an Orcas Island shoreline with a fence in the foreground.">
+        <img src="3-relax.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 3, Relax: cover art of an Orcas Island shoreline with a fence in the foreground.">
         <span class="label"><b>3</b> Relax</span>
+        <span class="line">Music to soothe and intrigue.</span>
+        <span class="listen">Listen on Spotify ↗</span>
       </a>
       <a class="cover" href="https://open.spotify.com/playlist/3nl4N8ixA5OkDqk6wDksgT" target="_blank" rel="noopener">
-        <img src="4-lounge.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 4, Lounge: hand-made cover art of an Orcas Island shoreline with a fence in the foreground.">
+        <img src="4-lounge.jpg" width="800" height="800" loading="lazy" alt="Orcas Vortex 4, Lounge: cover art of an Orcas Island shoreline with a fence in the foreground.">
         <span class="label"><b>4</b> Lounge</span>
+        <span class="line">Music to accompany martinis while being invaded by otherworldly beings.</span>
+        <span class="listen">Listen on Spotify ↗</span>
       </a>
     </div>
   </main>
