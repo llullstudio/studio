@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>llUll Studio</title>
 <script data-goatcounter="https://llull.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<meta name="description" content="llUll Studio: The Lyon Building, its elevator cab in 3D, a loft lounge in Tarifa modeled to plan, and Semantic Mirror, an installation that reflects conversation.">
+<meta name="description" content="llUll Studio, a gallery of curiosities: The Cuckoo Protocol video essay, The Lyon Building book, Semantic Mirror, the Orcas Vortex playlists, and two 3D models.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fdfcfa'/%3E%3Crect x='6' y='5' width='20' height='22' fill='none' stroke='%23b9644b' stroke-width='2.5'/%3E%3C/svg%3E">
 <link rel="canonical" href="https://llull.studio/">
 <meta property="og:type" content="website">
@@ -67,7 +67,13 @@ a{color:inherit;text-decoration:none}
 .tile:hover .go::after,.tile:focus-visible .go::after{transform:translateX(3px)}
 .tile:focus-visible .media{outline:2px solid var(--terracotta-deep);outline-offset:4px}
 
-@media (min-width:44rem){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:36rem){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:56rem){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,3.5vw,2.75rem) clamp(1.25rem,2.5vw,2rem)}
+  .media{margin-bottom:.9rem}
+  .tile h2{font-size:1.1rem}
+  .tile .desc{font-size:.86rem;line-height:1.65}
+}
 footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1px solid var(--rule);
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 2rem;font-size:.8rem;color:var(--ink-soft)}
 
@@ -85,13 +91,13 @@ footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1p
   <main class="work">
     <div class="grid">
 
-      <a class="tile" href="/semantic-mirror/">
-        <div class="media media--float">
-          <img src="/img/semantic-mirror.jpg" width="1000" height="1000" alt="Semantic Mirror: a gilt baroque frame holding soft abstract forms in orange, purple and sage above a field of small marks.">
+      <a class="tile" href="/cuckoo-protocol/">
+        <div class="media">
+          <img src="/img/cuckoo-protocol.jpg" width="1000" height="1000" alt="Title card for The Cuckoo Protocol: a gold egg in a nest beside two pale ones, over a stylized cliff with a robed figure.">
         </div>
-        <p class="eyebrow">Installation · Proof of concept</p>
-        <h2>Semantic Mirror</h2>
-        <p class="desc">A framed artwork that listens to the room and reflects the gist of what's said as slowly evolving abstract forms. Freeze it, and the meaning can be read back from the image.</p>
+        <p class="eyebrow">Video essay · Star Wars</p>
+        <h2>The Cuckoo Protocol</h2>
+        <p class="desc">In 1983, Luke switches his lightsaber off over his father. In 2017, he switches it on over his sleeping nephew.</p>
         <span class="go">Watch the video</span>
       </a>
 
@@ -104,6 +110,16 @@ footer{margin-top:clamp(3.5rem,7vw,5.5rem);padding:1.5rem 0 3.5rem;border-top:1p
         <p class="sub">A Corner In History</p>
         <p class="desc">The poured-concrete building at King and St. George, St. Augustine, built in 1886 and followed across six eras. Softcover, 60 pages.</p>
         <span class="go">See the book</span>
+      </a>
+
+      <a class="tile" href="/semantic-mirror/">
+        <div class="media media--float">
+          <img src="/img/semantic-mirror.jpg" width="1000" height="1000" alt="Semantic Mirror: a gilt baroque frame holding soft abstract forms in orange, purple and sage above a field of small marks.">
+        </div>
+        <p class="eyebrow">Installation · Proof of concept</p>
+        <h2>Semantic Mirror</h2>
+        <p class="desc">A framed artwork that listens to the room and reflects the gist of what's said as slowly evolving abstract forms. Freeze it, and the meaning can be read back from the image.</p>
+        <span class="go">Watch the video</span>
       </a>
 
       <a class="tile" href="/orcas-vortex/">
