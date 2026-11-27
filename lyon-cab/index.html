@@ -185,10 +185,10 @@ dd{margin:0;color:var(--cream)}
   <div class="row" id="finWrap"><div class="lbl">LAMINATE<span class="val" id="finName"></span></div><div class="seg" id="fin" role="group" aria-label="Laminate"></div><div class="note">Approximate, from the catalog page</div></div>
   <div class="row" id="togWrap"><div class="lbl">OPTIONS</div><div class="seg" role="group" aria-label="Options"><button type="button" data-tog="mirrors" aria-pressed="false">Mirrors</button><button type="button" data-tog="plaque" aria-pressed="false">Plaque</button></div></div>
   <div class="row" id="ceilWrap"><div class="lbl">CEILING</div><div class="seg" role="group" aria-label="Ceiling"><button type="button" data-ceil="m" aria-pressed="true">Molding, bronze</button><button type="button" data-ceil="d" aria-pressed="false">Down ceiling (in contract)</button></div></div>
-  <div class="row" id="metWrap" hidden><div class="lbl">REVEALS<span class="val" id="metName">Brass</span></div><div class="seg" role="group" aria-label="Reveal metal"><button type="button" data-met="brass" aria-pressed="true">Brass</button><button type="button" data-met="stainless" aria-pressed="false">Brushed stainless</button></div><div class="note">Brass confirmed available by QCab (Pam, 10/23)</div></div>
+  <div class="row" id="metWrap" hidden><div class="lbl">REVEALS<span class="val" id="metName">Brass</span></div><div class="seg" role="group" aria-label="Reveal metal"><button type="button" data-met="brass" aria-pressed="true">Brass</button><button type="button" data-met="stainless" aria-pressed="false">Brushed stainless</button></div><div class="note">Brass confirmed available by QCab</div></div>
   <div class="row" id="doorRow"><div class="lbl">CAB DOOR<span class="val" id="doorName">As it is</span></div><div class="note">Set at the lobby door, so both sides match</div></div>
   <details class="row" id="key"><summary>What's in it</summary><dl id="spec"></dl><p class="note" id="caveat"></p></details>
-  <div class="dims">80″ W × 52¾″ D × 96″ H, measured by Cliff · not for ordering</div>
+  <div class="dims">80″ W × 52¾″ D × 96″ H, measured · not for ordering</div>
   </div>
 </aside>
 
@@ -223,7 +223,7 @@ dd{margin:0;color:var(--cream)}
       <button type="button" data-door="bronze" aria-pressed="false" aria-label="Wrap, bronze">Bronze</button>
       <button type="button" data-door="reeded" aria-pressed="false" aria-label="Wrap, reeded bronze">Reeded bronze</button>
     </div>
-    <div class="cap" id="lobbyCap">First-floor elevator door from the lobby, Tony's photo, 2026-10-20. Finishes are simulated on the photo's own light. The finish you pick here is also shown on the cab door inside.</div>
+    <div class="cap" id="lobbyCap">First-floor elevator door from the lobby. Finishes are simulated on the photo's own light. The finish you pick here is also shown on the cab door inside.</div>
   </div>
 </div>
 
@@ -249,7 +249,7 @@ dd{margin:0;color:var(--cream)}
 })();
 </script>
 <script>
-(function(){var V='42',n=0;
+(function(){var V='43',n=0;
   function report(){fetch('app.js?v='+V+'&probe='+Date.now(),{cache:'no-store'}).then(function(r){
       window.__coverFail&&window.__coverFail('the 3D script did not download: '+(r.ok?'it downloads but would not start':'server said '+r.status))
     },function(e){window.__coverFail&&window.__coverFail('the 3D script did not download: network error')})}
