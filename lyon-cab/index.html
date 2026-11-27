@@ -184,20 +184,20 @@ dd{margin:0;color:var(--cream)}
   <div class="sub" id="optSub"></div>
   <div class="row" id="finWrap"><div class="lbl">LAMINATE<span class="val" id="finName"></span></div><div class="seg" id="fin" role="group" aria-label="Laminate"></div><div class="note">Approximate, from the catalog page</div></div>
   <div class="row" id="togWrap"><div class="lbl">OPTIONS</div><div class="seg" role="group" aria-label="Options"><button type="button" data-tog="mirrors" aria-pressed="false">Mirrors</button><button type="button" data-tog="plaque" aria-pressed="false">Plaque</button></div></div>
-  <div class="row" id="ceilWrap"><div class="lbl">CEILING</div><div class="seg" role="group" aria-label="Ceiling"><button type="button" data-ceil="m" aria-pressed="true">Wood moldings</button><button type="button" data-ceil="d" aria-pressed="false">Black reveals (in contract)</button></div></div>
+  <div class="row" id="ceilWrap"><div class="lbl">CEILING</div><div class="seg" role="group" aria-label="Ceiling"><button type="button" data-ceil="m" aria-pressed="true">Molding, bronze</button><button type="button" data-ceil="d" aria-pressed="false">Down ceiling (in contract)</button></div></div>
   <div class="row" id="metWrap" hidden><div class="lbl">REVEALS<span class="val" id="metName">Brass</span></div><div class="seg" role="group" aria-label="Reveal metal"><button type="button" data-met="brass" aria-pressed="true">Brass</button><button type="button" data-met="stainless" aria-pressed="false">Brushed stainless</button></div><div class="note">Brass confirmed available by QCab (Pam, 10/23)</div></div>
   <div class="row" id="doorRow"><div class="lbl">CAB DOOR<span class="val" id="doorName">As it is</span></div><div class="note">Set at the lobby door, so both sides match</div></div>
   <details class="row" id="key"><summary>What's in it</summary><dl id="spec"></dl><p class="note" id="caveat"></p></details>
-  <div class="dims">Estimated 68″ W × 54″ D × 94″ H · not for ordering</div>
+  <div class="dims">80″ W × 52¾″ D × 96″ H, measured by Cliff · not for ordering</div>
   <div class="contact">Questions: Tony Martinez · <a href="mailto:conceptblue@gmail.com">conceptblue@gmail.com</a></div>
   </div>
 </aside>
 
 <div id="nav">
-  <svg id="plan" viewBox="-112 -94 224 240" role="group" aria-label="Where to stand: tap a dot">
+  <svg id="plan" viewBox="-124 -94 248 240" role="group" aria-label="Where to stand: tap a dot">
     <text x="0" y="-76" text-anchor="middle" font-size="12" fill="#bfb4a3" font-family="Source Sans 3, system-ui, sans-serif" letter-spacing="2">REAR</text>
-    <path d="M5 68.6 L86.4 68.6 L86.4 -68.6 L-86.4 -68.6 L-86.4 68.6 L-81 68.6" fill="rgba(241,237,230,.06)" stroke="#F1EDE6" stroke-width="2.5"/>
-    <line x1="-81" y1="68.6" x2="5" y2="68.6" stroke="#C9A44C" stroke-width="5" stroke-dasharray="6 4"/>
+    <path d="M10.2 67 L101.6 67 L101.6 -67 L-101.6 -67 L-101.6 67 L-96.5 67" fill="rgba(241,237,230,.06)" stroke="#F1EDE6" stroke-width="2.5"/>
+    <line x1="-96.5" y1="67" x2="10.2" y2="67" stroke="#C9A44C" stroke-width="5" stroke-dasharray="6 4"/>
     <g id="planDots"></g>
   </svg>
   <div class="navcol">
@@ -250,8 +250,7 @@ dd{margin:0;color:var(--cream)}
 })();
 </script>
 <script>
-/* load the 3D script; retry twice with a fresh URL, then report what the server said (2026-10-23) */
-(function(){var V='41',n=0;
+(function(){var V='42',n=0;
   function report(){fetch('app.js?v='+V+'&probe='+Date.now(),{cache:'no-store'}).then(function(r){
       window.__coverFail&&window.__coverFail('the 3D script did not download: '+(r.ok?'it downloads but would not start':'server said '+r.status))
     },function(e){window.__coverFail&&window.__coverFail('the 3D script did not download: network error')})}
