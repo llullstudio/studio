@@ -4,3 +4,6 @@ _design/
 
 # System
 .DS_Store
+
+# Design working files (Sketch) — keep local, never publish
+llull branding/
